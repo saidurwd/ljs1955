@@ -9,7 +9,7 @@ $this->pageTitle = ContentCategory::getCategoryName($_GET['id']);
             $this->widget('zii.widgets.CListView', array(
                 'dataProvider' => $dataProvider,
                 'template' => '{items}{pager}',
-                'itemView' => '_view',
+                'itemView' => '_notices',
                 'pager' => array(
                     'header' => '',
                     'prevPageLabel' => '<i class="fa fa-backward"></i>',

@@ -173,6 +173,14 @@ class Content extends CActiveRecord {
         }
     }
 
+    public static function get_date_notice($date) {
+        if (empty($date) || $date == '0000-00-00' || $date == '0000-00-00 00:00:00') {
+            return null;
+        } else {
+            return '<span>' . date("j", strtotime($date)) . '</span>' . date("F", strtotime($date));
+        }
+    }
+
     public static function get_meta_desc($id) {
         $value = Content::model()->findByAttributes(array('id' => $id));
         if (empty($value->metadesc)) {
@@ -208,12 +216,179 @@ class Content extends CActiveRecord {
             return $value->introtext;
         }
     }
-    
+
+    public static function getData($id, $field) {
+        $model = Content::model()->findByPk($id);
+        if (empty($model->$field)) {
+            return null;
+        } else {
+            return $model->$field;
+        }
+    }
+
+    public static function get_image_view($id) {
+        $value = Content::model()->findByAttributes(array('id' => $id));
+        $filePath = Yii::app()->basePath . '/../uploads/images/' . $value->images;
+        if ((is_file($filePath)) && (file_exists($filePath))) {
+            echo CHtml::image(Yii::app()->baseUrl . '/uploads/images/' . $value->images, 'Picture', array('alt' => $value->title, 'class' => 'img-responsive', 'title' => $value->title, 'style' => ''));
+        }
+    }
+
     public static function get_images($id) {
         $value = Content::model()->findByAttributes(array('id' => $id));
         $filePath = Yii::app()->basePath . '/../uploads/images/' . $value->images;
         if ((is_file($filePath)) && (file_exists($filePath))) {
-            echo CHtml::image(Yii::app()->baseUrl . '/uploads/images/' . $value->images, 'Picture', array('alt' => $value->title, 'class' => 'img-responsive alignleft imageborder', 'title' => $value->title, 'style' => ''));
+            echo CHtml::image(Yii::app()->baseUrl . '/uploads/images/' . $value->images, 'Picture', array('alt' => $value->title, 'class' => 'img-responsive', 'title' => $value->title, 'style' => ''));
+        } else {
+            echo CHtml::image(Yii::app()->baseUrl . '/uploads/images/default.jpg', 'Picture', array('alt' => $value->title, 'class' => 'img-responsive', 'title' => $value->title, 'style' => ''));
+        }
+    }
+
+    public static function get_images_thumb($id) {
+        $value = Content::model()->findByAttributes(array('id' => $id));
+        $filePath = Yii::app()->basePath . '/../uploads/images/' . $value->images;
+        if ((is_file($filePath)) && (file_exists($filePath))) {
+            echo CHtml::image(Yii::app()->baseUrl . '/uploads/images/' . $value->images, 'Picture', array('alt' => $value->title, 'class' => 'img-thumbnail', 'title' => $value->title, 'style' => 'width:100px;'));
+        } else {
+            echo CHtml::image(Yii::app()->baseUrl . '/uploads/images/default.jpg', 'Picture', array('alt' => $value->title, 'class' => 'img-thumbnail', 'title' => $value->title, 'style' => 'width:100px;'));
+        }
+    }
+
+    public static function limit_text($text, $limit) {
+        if (str_word_count($text, 0) > $limit) {
+            $words = str_word_count($text, 2);
+            $pos = array_keys($words);
+            $text = substr($text, 0, $pos[$limit]) . '...';
+        }
+        return $text;
+    }
+
+    public static function get_recent_news($id) {
+        $array = Content::model()->findAll(array('condition' => 'catid=' . (int) $id . ' AND state=1', 'order' => 'created DESC', 'limit' => '2'));
+        foreach ($array as $key => $value) {
+            echo '<li>';
+            echo '<span class="rel_thumb">';
+            echo Content::get_images($value['id']);
+            echo '</span>';
+            echo '<div class="rel_right">';
+            echo '<h4>' . CHtml::link($value['title'], array('content/view', 'id' => $value['id']), array()) . '</h4>';
+            echo '<div class="meta">';
+            echo '<span class="author">Posted in: ' . CHtml::link(ContentCategory::getCategoryName($value['catid']), array('content/index', 'id' => $id), array()) . '</span>';
+            echo '<span class="date">on: <a href="#">' . Content::get_date_time($value['created']) . '</a></span>';
+            echo '</div>';
+            echo Content::limit_text($value['introtext'], 40);
+            echo '</div>';
+            echo '</li>';
+        }
+    }
+
+    public static function get_latest_news($id) {
+        $array = Content::model()->findAll(array('condition' => 'catid=' . (int) $id . ' AND state=1', 'order' => 'created DESC', 'limit' => '10'));
+        foreach ($array as $key => $value) {
+            echo '<li>';
+            echo '<span class="rel_thumb">';
+            echo Content::get_images_thumb($value['id']);
+            echo '</span>';
+            echo '<div class="rel_right">';
+            echo CHtml::link('<h4>' . $value['title'] . '</h4>', array('content/view', 'id' => $value['id']), array());
+            echo '<span class="date">Posted: ' . Content::get_date_time($value['created']) . '</span>';
+            echo '</div>';
+            echo '</li>';
+        }
+    }
+
+    public static function get_recent_notice($id) {
+        $array = Content::model()->findAll(array('condition' => 'catid=' . (int) $id . ' AND state=1', 'order' => 'created DESC', 'limit' => '3'));
+        foreach ($array as $key => $value) {
+            echo '<li class="related_post_sec single_post">';
+            echo '<span class="date-wrapper">';
+            echo '<span class="date">' . Content::get_date_notice($value['created']) . '</span>';
+            echo '</span>';
+            echo '<div class="rel_right">';
+            echo '<h4>' . CHtml::link(Content::limit_text($value['title'], 6), array('content/view', 'id' => $value['id']), array()) . '</h4>';
+            echo '<div class="meta">';
+            echo '<span class="place"><i class="fa fa-map-marker"></i>Bengali Section</span>';
+            echo '</div>';
+            echo '</div>';
+            echo '</li>';
+        }
+    }
+
+    public static function get_recent_event($id) {
+        $array = Content::model()->findAll(array('condition' => 'catid=' . (int) $id . ' AND state=1', 'order' => 'created DESC', 'limit' => '3'));
+        foreach ($array as $key => $value) {
+            echo '<li class="related_post_sec single_post">';
+            echo '<span class="date-wrapper">';
+            echo '<span class="date">' . Content::get_date_notice($value['created']) . '</span>';
+            echo '</span>';
+            echo '<div class="rel_right">';
+            echo '<h4>' . CHtml::link(Content::limit_text($value['title'], 6), array('content/view', 'id' => $value['id']), array()) . '</h4>';
+            echo '<div class="meta">';
+            echo '<span class="place"><i class="fa fa-map-marker"></i>English</span>';
+            echo '<span class="event-time"><i class="fa fa-clock-o"></i>' . Content::get_date_time($value['created']) . '</span>';
+            echo '</div>';
+            echo '</div>';
+            echo '</li>';
+        }
+    }
+
+    public static function get_recent_testimonial($id) {
+        $array = Content::model()->findAll(array('condition' => 'catid=' . (int) $id . ' AND state=1', 'order' => 'RAND()', 'limit' => '1'));
+        foreach ($array as $key => $value) {
+            echo '<div class="carousal_content">';
+            echo $value['introtext'];
+            echo '</div>';
+            echo '<div class="carousal_bottom">';
+            echo '<div class="thumb">';
+            echo Content::get_images($value['id']);
+            echo '</div>';
+            echo '<div class="thumb_title">';
+            echo '<span class="author_name">' . $value['title'] . '</span>';
+            echo '<span class="author_designation">' . $value['metadesc'] . '</span>';
+            echo '</div>';
+            echo '</div>';
+        }
+    }
+
+    public static function get_recent_paintings($id) {
+        $array = Content::model()->findAll(array('condition' => 'catid=' . (int) $id . ' AND state=1', 'order' => 'created DESC', 'limit' => '4'));
+        foreach ($array as $key => $value) {
+            echo '<div class="col-xs-6 col-sm-3">';
+            echo '<div class="aboutImage">';
+            $data = Content::get_images($value['id']);
+            $data .= '<div class="overlay">';
+            $data .= '<p>' . Content::limit_text($value['introtext'], 20) . '</p>';
+            $data .= '</div>';
+            $data .= '<span class="captionLink">' . $value['title'] . '<span></span></span>';
+            echo CHtml::link($data, array('content/view', 'id' => $value['id']));
+            echo '</div>';
+            echo '</div>';
+        }
+    }
+
+    public static function get_home_banner($id) {
+        $array = Banner::model()->findAll(array('condition' => 'catid=' . (int) $id . ' AND published=1', 'order' => 'ordering'));
+        foreach ($array as $key => $value) {
+            if ($value['sticky'] == 1) {
+                $sticky = 'active';
+            } else {
+                $sticky = '';
+            }
+            echo '<div class="item ' . $sticky . '">';
+            echo CHtml::image(Yii::app()->baseUrl . '/uploads/banners/' . $value['banner'], $value['name'], array('class' => 'img-responsive'));
+            echo '<div class="banner_caption">';
+            echo '<div class="container">';
+            echo '<div class="row">';
+            echo '<div class="col-xs-12">';
+            echo '<div class="caption_inner animated fadeInUp">';
+            echo '<h1>' . $value['name'] . '</h1>';
+            echo '<p>' . $value['description'] . '</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
         }
     }
 

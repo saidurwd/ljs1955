@@ -1,4 +1,4 @@
-<?php //echo CHtml::encode(Yii::app()->name);   ?>        
+<?php //echo CHtml::encode(Yii::app()->name);             ?>        
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -33,7 +33,7 @@
         <i class="option-switcher-btn fa fa-gear hidden-xs"></i>
         <div class="option-switcher animated fadeInRight">
             <div class="option-swticher-header">
-                <div class="option-switcher-heading">Template Options</div>            
+                <div class="option-switcher-heading">Style Options</div>            
                 <div class="theme-close"><i class="fa fa-close"></i></div>
             </div>
             <div class="option-swticher-body">
@@ -66,6 +66,7 @@
         </div>
         <!--/option-switcher-->
         <div class="main_wrapper">
+            <!--top email, phone and social icon-->
             <div class="topbar clearfix">
                 <div class="container">
                     <ul class="topbar-left">
@@ -106,6 +107,7 @@
                 </div>
             </div>
 
+            <!--top nav bar-->
             <div class="header clearfix">
                 <nav class="navbar navbar-main navbar-default">
                     <div class="container">
@@ -120,103 +122,27 @@
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-                                        <a class="navbar-brand logo clearfix" href="index.html"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/logo.png" alt="" class="img-responsive" /></a>
+                                        <?php echo CHtml::link(CHtml::image(Yii::app()->baseUrl . '/img/logo.jpg', 'Logo', array('alt' => 'Logo')), array('site/index'), array('class' => 'navbar-brand logo clearfix')); ?>
                                     </div>
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse" id="main-nav">
                                         <ul class="nav navbar-nav navbar-right">
-                                            <li class="active"><a href="index.html">Home</a></li>
-                                            <li class="dropdown list-inline">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Courses</a>
-                                                <ul class="dropdown-menu">
-                                                    <li class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Courses Grid View</a>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a href="course-grid-3col.html">3 Columns</a></li>
-                                                            <li><a href="course-grid-4col.html">4 Columns</a></li>
-                                                            <li><a href="course-grid-sidebar-right.html">Sidebar Right</a></li>
-                                                            <li><a href="course-grid-sidebar-left.html">Sidebar Left</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Courses List View</a>
-                                                        <ul  class="dropdown-menu">
-                                                            <li><a href="course-right-sidebar.html">Sidebar Right</a></li>
-                                                            <li><a href="course-left-sidebar.html">Sidebar Left</a></li>
-                                                            <li><a href="course-fullwidth.html">Fullwidth</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Single Course</a>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a href="single-course-right-sidebar.html">Sidebar Right</a></li>
-                                                            <li><a href="single-course-left-sidebar.html">Sidebar Left</a></li>
-                                                            <li><a href="single-course-fullwidth.html">Fullwidth</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Buy Course</a>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a href="buying-steps.html">Payment</a></li>
-                                                            <li><a href="buying-confirmation.html">Confirmation </a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
+                                            <li class="active"><?php echo CHtml::link('Home', array('site/index')); ?></li>
                                             <li class="dropdown">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PAGES</a>
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="about.html">About College</a></li>
-                                                    <li class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Photo Gallery</a>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a href="photo-gallery3col.html">Gallery 3 Columns</a></li>
-                                                            <li><a href="photo-gallery4col.html">Gallery 4 Columns</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Apply Now</a>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a href="buying-steps.html">Apply For Addmission</a></li>
-                                                            <li><a href="buying-confirmation.html">Confirmation</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Prices Table</a>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a href="price-table-3col.html">Prices 3 column</a></li>
-                                                            <li><a href="price-table-4col.html">Prices 4 column</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="campus.html">Our Campus</a></li>
-                                                    <li><a href="stuff.html">Stuff</a></li>
-                                                    <li><a href="international_students.html">International Students</a></li>
-                                                    <li><a href="contact-us.html">Contact Us</a></li>
-                                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                                    <li><a href="404-error.html">404 Not Found</a></li>
-                                                    <li><a href="coming-soon-dark.html" target="_blank">Coming Soon</a></li>
+                                                    <li><?php echo CHtml::link(Content::getData(16, 'title'), array('content/view', 'id' => 16)); ?></li>
+                                                    <li><?php echo CHtml::link(Content::getData(17, 'title'), array('content/view', 'id' => 17)); ?></li>
+                                                    <li><?php echo CHtml::link(Content::getData(18, 'title'), array('content/view', 'id' => 18)); ?></li>                  
                                                 </ul>
                                             </li>
-                                            <li class="dropdown">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">BLOG</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="blog-right-sidebar.html">Blog Sidebar Right</a></li>
-                                                    <li><a href="blog-left-sidebar.html">Blog Sidebar Left</a></li>
-                                                    <li><a href="single-post-right-sidebar.html">Single Post Sidebar Right</a></li>
-                                                    <li><a href="single-post-left-sidebar.html">Single Post Sidebar Left</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="events-3col.html">Events 3 Columns</a></li>
-                                                    <li><a href="events-right-sidebar.html">Events Sidebar Right</a></li>
-                                                    <li><a href="events-left-sidebar.html">Events Sidebar Left</a></li>
-                                                    <li><a href="single-events.html">Single Event</a></li>
-                                                    <li><a href="events-calendar.html">Events Callender</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="apply_now"><a href="buying-steps.html">Apply Now</a></li>
+                                            <li><?php echo CHtml::link(Content::getData(15, 'title'), array('content/view', 'id' => 15)); ?></li>
+                                            <li><?php echo CHtml::link(Content::getData(19, 'title'), array('content/view', 'id' => 19)); ?></li>
+                                            <li><?php echo CHtml::link('Event', array('content/events')); ?></li>
+                                            <li><?php echo CHtml::link('Gallery', array('content/gallery')); ?></li>                                             
+                                            <li class="apply_now">
+                                                <?php echo CHtml::link('Contact us', array('site/contact')); ?>
+                                            </li>                                            
                                         </ul>
                                     </div><!-- navbar-collapse -->
                                 </div>
@@ -226,432 +152,30 @@
                 </nav><!-- navbar -->
             </div>
 
-            <div class="banner carousel slide" id="recommended-item-carousel" data-ride="carousel">
-                <div class="slides carousel-inner">
-                    <div class="item active">
-                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/slider/slider_image_1.jpg" alt="" />
-                        <div class="banner_caption">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="caption_inner animated fadeInUp">
-                                            <h1>Welcome To Royal College</h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur ante volutpat sem aliquam lobortis. Mauris porta fermentum volutpat. Praesent est sapien, tincidunt vel arcu vitae, mattis sollicitudin lectus.</p>
-                                            <a target="_blank" href="https://goo.gl/0doAl6">Buy Now</a>
-                                        </div><!--end caption_inner-->
-                                    </div>
-                                </div><!--end row-->
-                            </div><!--end container-->
-                        </div><!--end banner_caption-->
-                    </div>
-                    <div class="item">
-                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/slider/slider_image_2.jpg" alt="" />
-                        <div class="banner_caption">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="caption_inner animated fadeInUp">
-                                            <h1>Admission going on</h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur ante volutpat sem aliquam lobortis. Mauris porta fermentum volutpat. Praesent est sapien, tincidunt vel arcu vitae, mattis sollicitudin lectus.</p>
-                                            <a target="_blank" href="https://goo.gl/0doAl6">Buy Now</a>
-                                        </div><!--end caption_inner-->
-                                    </div>
-                                </div><!--end row-->
-                            </div><!--end container-->
-                        </div><!--end banner_caption-->
-                    </div>
-                    <div class="item">
-                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/slider/slider_image_3.jpg" alt="" />
-                        <div class="banner_caption">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="caption_inner animated fadeInUp">
-                                            <h1>Arrange a tour to our college</h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur ante volutpat sem aliquam lobortis. Mauris porta fermentum volutpat. Praesent est sapien, tincidunt vel arcu vitae, mattis sollicitudin lectus.</p>
-                                            <a target="_blank" href="https://goo.gl/0doAl6">Buy Now</a>
-                                        </div><!--end caption_inner-->
-                                    </div>
-                                </div><!--end row-->
-                            </div><!--end container-->
-                        </div><!--end banner_caption-->
-                    </div>
-                    <div class="item">
-                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/slider/slider_image_4.jpg" alt="" />
-                        <div class="banner_caption">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="caption_inner animated fadeInUp">
-                                            <h1>Find your dream course</h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur ante volutpat sem aliquam lobortis. Mauris porta fermentum volutpat. Praesent est sapien, tincidunt vel arcu vitae, mattis sollicitudin lectus.</p>
-                                            <a target="_blank" href="https://goo.gl/0doAl6">Buy Now</a>
-                                        </div><!--end caption_inner-->
-                                    </div>
-                                </div><!--end row-->
-                            </div><!--end container-->
-                        </div><!--end banner_caption-->
-                    </div>
-                </div>
-                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/slider/prev.png">
-                </a>
-                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/slider/next.png">
-                </a>    
-            </div><!--end banner-->
+            <?php echo $content; ?>
 
-            <div class="aboutArea">
-                <div class="container">
-                    <div class="row clearfix">
-                        <div class="col-xs-12">
-                            <div class="aboutTitle">
-                                <h2>Our Popular Courses</h2>
-                            </div><!-- aboutTitle -->
-                        </div><!-- col-sm-3 col-xs-12 -->
-                    </div><!-- row clearfix -->
-
-                    <div class="about_inner clearfix">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="aboutImage">
-                                    <a href="single-course-right-sidebar.html"> 
-                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/learn/learn_1.jpg" alt="" class="img-responsive" />
-                                        <div class="overlay">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur ante volutpat sem aliquam lobortis.</p>
-                                        </div>
-                                        <span class="captionLink">English Literature<span></span></span>
-                                    </a>
-                                </div><!-- aboutImage -->
-                            </div>
-
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="aboutImage">
-                                    <a href="single-course-right-sidebar.html"> 
-                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/learn/learn_2.jpg" alt="" class="img-responsive" />
-                                        <div class="overlay">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur ante volutpat sem aliquam lobortis.</p>
-                                        </div>
-                                        <span class="captionLink">Business Administration<span></span></span>
-                                    </a>
-                                </div><!-- aboutImage -->
-                            </div>
-
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="aboutImage">
-                                    <a href="single-course-right-sidebar.html"> 
-                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/learn/learn_3.jpg" alt="" class="img-responsive" />
-                                        <div class="overlay">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur ante volutpat sem aliquam lobortis.</p>
-                                        </div>
-                                        <span class="captionLink">Computer Science<span></span></span>
-                                    </a>
-                                </div><!-- aboutImage -->
-                            </div>
-
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="aboutImage">
-                                    <a href="single-course-right-sidebar.html"> 
-                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/learn/learn_4.jpg" alt="" class="img-responsive" />
-                                        <div class="overlay">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur ante volutpat sem aliquam lobortis.</p>
-                                        </div>
-                                        <span class="captionLink">Mathematics<span></span></span>
-                                    </a>
-                                </div><!-- aboutImage -->
-                            </div>
-                        </div><!-- row -->
-                    </div><!-- about_inner -->
-
-                </div><!-- container -->
-            </div><!-- aboutArea -->
-
-            <div class="mainContent clearfix">
-                <div class="container">
-                    <div class="row clearfix">
-
-                        <div class="col-sm-8 col-xs-12">
-                            <div class="videoNine clearfix">
-
-                                <div class="videoArea clearfix">
-                                    <h3>Welcome To Royal College</h3>
-                                    <div class="row">
-                                        <div class="col-lg-8 col-md-7 col-xs-12 videoLeft">
-                                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/video_image.jpg" data-video="https://www.youtube.com/embed/oOMcZoeEK0A?autoplay=1">
-                                        </div><!-- videoLeft -->
-                                        <div class="col-lg-4 col-md-5 col-xs-12 videoRight">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur ante volutpat sem aliquam lobortis. Mauris porta fermentum volutpat. Praesent est sapien, tincidunt vel arcu vitae, mattis sollicitudin lectus. Mauris porta fermentum volutpat. Praesent est sapien, tincidunt vel arcu vitae, mattis sollicitudin lectus.</p>
-                                            <a href="about.html" class="btn btn-block learnBtn">Learn More</a>
-                                        </div><!-- videoRight -->
-                                    </div><!-- row -->
-                                </div><!-- videoArea -->
-
-                                <div class="related_post_sec single_post">
-                                    <h3>Recent News</h3>
-                                    <ul>
-                                        <li>
-                                            <span class="rel_thumb">
-                                                <a href="single-post-right-sidebar.html"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/news/related_thumb_01.png" alt=""></a>
-                                            </span><!--end rel_thumb-->
-                                            <div class="rel_right">
-                                                <h4><a href="single-post-right-sidebar.html">Lorem Ipsum dolar simt Amet simply dummy Text Lorem Ipsum dolar</a></h4>
-                                                <div class="meta">
-                                                    <span class="author">Posted in: <a href="#">Update</a></span>
-                                                    <span class="date">on: <a href="#">January 24, 2015</a></span>
-                                                </div>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation...</p>
-                                            </div><!--end rel right-->
-                                        </li>
-                                        <li>
-                                            <span class="rel_thumb">
-                                                <a href="single-post-right-sidebar.html"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/news/related_thumb_02.jpg" alt=""></a>
-                                            </span><!--end rel_thumb-->
-                                            <div class="rel_right">
-                                                <h4><a href="single-post-right-sidebar.html">Lorem Ipsum dolar simt Amet simply dummy Text Lorem Ipsum dolar</a></h4>
-                                                <div class="meta">
-                                                    <span class="author">Posted in: <a href="#">Exam</a></span>
-                                                    <span class="date">on: <a href="#">January 24, 2015</a></span>
-                                                </div>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation...</p>
-                                            </div><!--end rel right-->
-                                        </li>
-                                    </ul>
-                                </div><!--related_post_sec-->
-
-                            </div><!--videoNine-->
-                        </div><!-- col-sm-8 col-xs-12 -->
-
-                        <div class="col-sm-4 col-xs-12">
-                            <div class="formArea clearfix">
-                                <div class="formTitle">
-                                    <h3>Find a Course</h3>
-                                    <p>Offered in small class sizes with great emphasis on the demands of the specification and exam technique.</p>
-                                </div><!-- formTitle -->
-                                <form action="#" method="post">
-                                    <div class="selectBox clearfix">
-                                        <select name="guiest_id1" id="guiest_id1">
-                                            <option value="0">Location</option>
-                                            <option value="1">Location_1</option>
-                                            <option value="2">Location_2</option>
-                                            <option value="3">Location_3</option>            
-                                        </select>
-                                    </div><!-- selectBox -->
-                                    <div class="selectBox clearfix">
-                                        <select name="guiest_id2" id="guiest_id2">
-                                            <option value="0">Level</option>
-                                            <option value="1">Level_1</option>
-                                            <option value="2">Level_2</option>
-                                            <option value="3">Level_3</option>            
-                                        </select>
-                                    </div><!-- selectBox -->
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Course Name">
-                                    </div>
-                                    <button type="submit" class="btn btn-default btn-block commonBtn">Search</button>
-                                </form>
-                            </div><!-- formArea -->
-                            <div class="list_block related_post_sec">
-                                <div class="upcoming_events">
-                                    <h3>Upcoming Events</h3>
-                                    <ul>
-                                        <li class="related_post_sec single_post">
-                                            <span class="date-wrapper">
-                                                <span class="date"><span>24</span>January</span>
-                                            </span>
-                                            <div class="rel_right">
-                                                <h4><a href="single-events.html">Offered in small class sizes with great emphasis...</a></h4>
-                                                <div class="meta">
-                                                    <span class="place"><i class="fa fa-map-marker"></i>Main Campus</span>
-                                                    <span class="event-time"><i class="fa fa-clock-o"></i>11.00 pm</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="related_post_sec single_post">
-                                            <span class="date-wrapper">
-                                                <span class="date"><span>24</span>January</span>
-                                            </span>
-                                            <div class="rel_right">
-                                                <h4><a href="single-events.html">Offered in small class sizes with great emphasis...</a></h4>
-                                                <div class="meta">
-                                                    <span class="place"><i class="fa fa-map-marker"></i>Main Campus</span>
-                                                    <span class="event-time"><i class="fa fa-clock-o"></i>11.00 pm</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="related_post_sec single_post">
-                                            <span class="date-wrapper">
-                                                <span class="date"><span>24</span>January</span>
-                                            </span>
-                                            <div class="rel_right">
-                                                <h4><a href="single-events.html">Offered in small class sizes with great emphasis...</a></h4>
-                                                <div class="meta">
-                                                    <span class="place"><i class="fa fa-map-marker"></i>Main Campus</span>
-                                                    <span class="event-time"><i class="fa fa-clock-o"></i>11.00 pm</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <a href="events-3col.html" class="btn btn-default btn-block commonBtn">More Events</a>
-                                </div>
-                            </div><!-- end list_block -->
-                        </div><!-- col-sm-4 col-xs-12 -->
-
-                    </div><!-- row clearfix -->
-                </div><!-- container -->
-            </div><!-- mainContent -->
-
-            <div class="count clearfix wow fadeIn" data-wow-delay="100ms">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-3">
-                            <div class="text-center">
-                                <div class="icon"><i class="fa fa-group"></i></div>
-                                <div class="counter"> 
-                                    <span class="timer">8298</span> 
-                                </div>
-                                <div class="seperator-small"></div>
-                                <p>Students</p>
-                            </div>
-                        </div><!-- col-sm-3 -->
-                        <div class="col-xs-6 col-sm-3">
-                            <div class="text-center">
-                                <div class="icon"><i class="fa fa-book"></i></div>
-                                <div class="counter"> 
-                                    <span class="timer">142</span> 
-                                </div>
-                                <div class="seperator-small"></div>
-                                <p>Courses</p>
-                            </div>
-                        </div><!-- col-sm-3 -->
-                        <div class="col-xs-6 col-sm-3">
-                            <div class="text-center">
-                                <div class="icon"><i class="fa fa-male"></i></div>
-                                <div class="counter"> 
-                                    <span class="timer">1047</span> 
-                                </div>
-                                <div class="seperator-small"></div>
-                                <p>Stuffs</p>
-                            </div>
-                        </div><!-- col-sm-3 -->
-                        <div class="col-xs-6 col-sm-3">
-                            <div class="text-center">
-                                <div class="icon"><i class="fa fa-map-marker"></i></div>
-                                <div class="counter"> 
-                                    <span class="timer">10</span> 
-                                </div>
-                                <div class="seperator-small"></div>
-                                <p>Locations</p>
-                            </div>
-                        </div><!-- col-sm-3 -->
-                    </div><!-- row -->
-                    <div class="count-bottom text-center">
-                        <h1>Do you like this template?</h1>
-                        <p>nec congue consequat risus, nec volutpat enim tempus id. Proin et sapien eget diam ullamcorper consectetur. Sed blandit imperdiet mauris. Mauris eleifend faucib</p>
-                        <p>ipsum quis varius. Quisque pharetra leo erat, non eleifend nibh interdum quis.</p>
-                        <a target="_blank" href="https://goo.gl/0doAl6" class="btn btn-default commonBtn">Buy now</a>
-                    </div><!-- row -->
-                </div><!-- container -->
-            </div><!-- count -->
-
-            <div class="testimonial-section clearfix"> 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6">
-                            <div class="testimonial">
-                                <div class="carousal_content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-                                </div>
-                                <div class="carousal_bottom">
-                                    <div class="thumb">
-                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/about/SARA-LISBON_Art-Student.jpg" alt="" draggable="false">
-                                    </div>                    
-                                    <div class="thumb_title">
-                                        <span class="author_name">Sara Lisbon</span>
-                                        <span class="author_designation">Student<a href="#"> English Literature</a></span>
-                                    </div>
-                                </div>
-                            </div><!-- testimonial -->
-                        </div><!-- col-xs-12 -->
-                        <div class="col-xs-12 col-sm-6">
-                            <div class="features">
-                                <h3>Why Choose Us?</h3>
-                                <ul>
-                                    <li><i class="fa fa-check-circle-o"></i>It’s a complete solution for your college website</li>
-                                    <li><i class="fa fa-check-circle-o"></i>PSD file included to help you customize the design better</li>
-                                    <li><i class="fa fa-check-circle-o"></i>SASS file included for unlimited hasel free style customization</li>
-                                    <li><i class="fa fa-check-circle-o"></i>Theme option switcher for live cusomization preview</li>
-                                    <li><i class="fa fa-check-circle-o"></i>24/7 Support</li>
-                                </ul>
-                            </div>
-                        </div><!-- col-xs-12 -->
-                    </div><!-- row -->
-                </div><!-- container -->
-            </div><!-- testimonial-section -->
-
-            <div class="brand-section clearfix">
-                <div class="container">
-                    <div class="brand-slider flexslider">
-                        <ul class="slides">
-                            <li>
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/brand1.png" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/brand2.png" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/brand3.png" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/brand4.png" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/brand5.png" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/brand1.png" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/brand2.png" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/brand3.png" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/brand4.png" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/brand5.png" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/brand1.png" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/home/brand2.png" /></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div><!-- brand-section -->
-
+            <!--footer menu-->
             <div class="menuFooter clearfix">
                 <div class="container">
                     <div class="row clearfix">
 
                         <div class="col-sm-3 col-xs-6">
                             <ul class="menuLink clearfix">
-                                <li><a href="about.html">About Royal College</a></li>
-                                <li><a href="campus.html">About Campus</a></li>
-                                <li><a href="stuff.html">Staff Members</a></li>
-                                <li><a href="about.html">Why Choose Us?</a></li>
+                                <li><?php echo CHtml::link(Content::getData(15, 'title'), array('content/view', 'id' => 15)); ?></li>
+                                <li><?php echo CHtml::link(Content::getData(19, 'title'), array('content/view', 'id' => 19)); ?></li>
+                                <li><?php echo CHtml::link('Event', array('content/events')); ?></li>
+                                <li><?php echo CHtml::link('Gallery', array('content/gallery')); ?></li> 
+                                <li><?php echo CHtml::link('News', array('content/index', 'id' => 2)); ?></li> 
                             </ul>
                         </div><!-- col-sm-3 col-xs-6 -->
 
                         <div class="col-sm-3 col-xs-6 borderLeft clearfix">
                             <ul class="menuLink clearfix">
-                                <li><a href="course-fullwidth.html">All Courses</a></li>
-                                <li><a href="buying-steps.html">Admission</a></li>
-                                <li><a href="photo-gallery3col.html">Photo Gallery</a></li>
-                                <li><a href="international_students.html">International Students</a></li>
+                                <li><?php echo CHtml::link(Content::getData(16, 'title'), array('content/view', 'id' => 16)); ?></li>
+                                <li><?php echo CHtml::link(Content::getData(17, 'title'), array('content/view', 'id' => 17)); ?></li>
+                                <li><?php echo CHtml::link(Content::getData(18, 'title'), array('content/view', 'id' => 18)); ?></li> 
+                                <li><?php echo CHtml::link('Paintings', array('content/index', 'id' => 6)); ?></li>       
+                                <li><?php echo CHtml::link('Notice Board', array('content/notices')); ?></li>                                     
                             </ul>
                         </div><!-- col-sm-3 col-xs-6 -->
 
@@ -659,11 +183,11 @@
                             <div class="footer-address">
                                 <h5>Location:</h5>
                                 <address>
-                                    Royal College<br>
-                                    1727 Lombard St.<br>
-                                    San Francisco
+                                    Little Jewels Nursery Infant<br /> And Junior School<br />
+                                    Purana Poltan<br />
+                                    Dhaka-1000
                                 </address>
-                                <a href="contact-us.html"><span class="place"><i class="fa fa-map-marker"></i>Main Campus</span></a>
+                                <?php echo CHtml::link('<span class="place"><i class="fa fa-map-marker"></i>Main Campus</span>', array('site/contact')); ?>
                             </div>
                         </div><!-- col-sm-3 col-xs-6 -->
 
@@ -681,27 +205,28 @@
                             </div><!-- social -->
                             <div class="contactNo clearfix">
                                 <h5>Call us on:</h5>
-                                <h3>012-3434-456768</h3>
+                                <p>+8802 9552854<br />+8802 9562502</p>
                             </div><!-- contactNo -->
                         </div><!-- col-sm-3 col-xs-6 -->
 
                     </div><!-- row clearfix -->
                 </div><!-- container -->
-            </div><!-- menuFooter -->
+            </div>
+            <!-- menuFooter -->
 
+            <!-- footer -->
             <div class="footer clearfix">
                 <div class="container">
                     <div class="row clearfix">
-                        <div class="col-sm-6 col-xs-12 copyRight">
-                            <p>© 2016 Copyright Royal College Bootstrap Template by <a href="http://www.iamabdus.com/">Abdus</a></p>
+                        <div class="col-sm-8 col-xs-12 copyRight">
+                            <p>Copyright &copy; <?php echo Yii::app()->name; ?> <?php echo date('Y'); ?>. Designed and developed by <?php echo CHtml::link('Optimo Solution', 'http://www.optimosolution.com', array('target' => '_blank')); ?></p>
                         </div><!-- col-sm-6 col-xs-12 -->
-                        <div class="col-sm-6 col-xs-12 privacy_policy">
-                            <a href="contact-us.html">Contact us</a>
-                            <a href="privacy-policy.html">Privacy Policy</a>
+                        <div class="col-sm-4 col-xs-12 privacy_policy">
+                            <?php echo CHtml::link('Contact us', array('site/contact')); ?>
                         </div><!-- col-sm-6 col-xs-12 -->
                     </div><!-- row clearfix -->
                 </div><!-- container -->
-            </div><!-- footer -->
+            </div><!-- end footer -->
 
         </div>
         <!-- JQUERY SCRIPTS -->
@@ -717,6 +242,6 @@
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/plugins/moment.min.js"></script>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/plugins/fullcalendar.min.js"></script>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/options/optionswitcher.js"></script>
-        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/custom.js"></script>
+        <script src="<?php //echo Yii::app()->theme->baseUrl;          ?>/js/custom.js"></script>
     </body>
 </html>
