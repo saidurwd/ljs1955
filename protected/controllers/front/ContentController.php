@@ -26,7 +26,7 @@ class ContentController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view', 'notices', 'events', 'notice', 'event', 'gallery'),
+                'actions' => array('index', 'view', 'news', 'article', 'notices', 'events', 'notice', 'event', 'gallery'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -125,6 +125,44 @@ class ContentController extends Controller {
         $criteria->order = 'created DESC, id DESC';
         $this->render('index', array(
             'dataProvider' => $dataProvider,
+        ));
+    }
+
+    public function actionGallery() {
+        $criteria = new CDbCriteria;
+        $criteria->addCondition('published=1');
+        $criteria->addCondition('catid IN(SELECT c.id FROM {{banner_category}} c WHERE c.id=2 OR c.parent_id=2)');
+        $dataProvider = new CActiveDataProvider('Banner', array(
+            'criteria' => $criteria,
+            'pagination' => array(
+                'pageSize' => 20,
+            ),
+        ));
+        $criteria->order = 'ordering DESC, id DESC';
+        $this->render('gallery', array(
+            'dataProvider' => $dataProvider,
+        ));
+    }
+
+    public function actionNews() {
+        $criteria = new CDbCriteria;
+        $criteria->addCondition('state=1');
+        $criteria->addCondition('catid=2');
+        $dataProvider = new CActiveDataProvider('Content', array(
+            'criteria' => $criteria,
+            'pagination' => array(
+                'pageSize' => 10,
+            ),
+        ));
+        $criteria->order = 'created DESC, id DESC';
+        $this->render('news', array(
+            'dataProvider' => $dataProvider,
+        ));
+    }
+
+    public function actionArticle($id) {
+        $this->render('article', array(
+            'model' => $this->loadModel($id),
         ));
     }
 

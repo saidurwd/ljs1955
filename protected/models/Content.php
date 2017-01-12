@@ -271,9 +271,9 @@ class Content extends CActiveRecord {
             echo Content::get_images($value['id']);
             echo '</span>';
             echo '<div class="rel_right">';
-            echo '<h4>' . CHtml::link($value['title'], array('content/view', 'id' => $value['id']), array()) . '</h4>';
+            echo '<h4>' . CHtml::link($value['title'], array('content/article', 'id' => $value['id']), array()) . '</h4>';
             echo '<div class="meta">';
-            echo '<span class="author">Posted in: ' . CHtml::link(ContentCategory::getCategoryName($value['catid']), array('content/index', 'id' => $id), array()) . '</span>';
+            echo '<span class="author">Posted in: ' . CHtml::link(ContentCategory::getCategoryName($value['catid']), array('content/news'), array()) . '</span>';
             echo '<span class="date">on: <a href="#">' . Content::get_date_time($value['created']) . '</a></span>';
             echo '</div>';
             echo Content::limit_text($value['introtext'], 40);
@@ -290,7 +290,7 @@ class Content extends CActiveRecord {
             echo Content::get_images_thumb($value['id']);
             echo '</span>';
             echo '<div class="rel_right">';
-            echo CHtml::link('<h4>' . $value['title'] . '</h4>', array('content/view', 'id' => $value['id']), array());
+            echo CHtml::link('<h4>' . $value['title'] . '</h4>', array('content/article', 'id' => $value['id']), array());
             echo '<span class="date">Posted: ' . Content::get_date_time($value['created']) . '</span>';
             echo '</div>';
             echo '</li>';
@@ -316,6 +316,24 @@ class Content extends CActiveRecord {
 
     public static function get_recent_event($id) {
         $array = Content::model()->findAll(array('condition' => 'catid=' . (int) $id . ' AND state=1', 'order' => 'created DESC', 'limit' => '3'));
+        foreach ($array as $key => $value) {
+            echo '<li class="related_post_sec single_post">';
+            echo '<span class="date-wrapper">';
+            echo '<span class="date">' . Content::get_date_notice($value['created']) . '</span>';
+            echo '</span>';
+            echo '<div class="rel_right">';
+            echo '<h4>' . CHtml::link(Content::limit_text($value['title'], 6), array('content/event', 'id' => $value['id']), array()) . '</h4>';
+            echo '<div class="meta">';
+            echo '<span class="place"><i class="fa fa-map-marker"></i>English</span>';
+            echo '<span class="event-time"><i class="fa fa-clock-o"></i>' . Content::get_date_time($value['created']) . '</span>';
+            echo '</div>';
+            echo '</div>';
+            echo '</li>';
+        }
+    }
+    
+    public static function get_latest_event($id) {
+        $array = Content::model()->findAll(array('condition' => 'catid=' . (int) $id . ' AND state=1', 'order' => 'created DESC', 'limit' => '10'));
         foreach ($array as $key => $value) {
             echo '<li class="related_post_sec single_post">';
             echo '<span class="date-wrapper">';

@@ -1,15 +1,15 @@
 <?php
-$this->pageTitle = 'Events';
+$this->pageTitle = 'Picture Gallery';
 ?>
 <div class="row">
-    <div class="col-xs-12 col-sm-8 post_left pull-right">
-        <div class="upcoming_events event-col">
-            <div class="row clearfix">
+    <div class="col-xs-12">
+        <div class="photo_gallery custom">
+            <ul class="gallery popup-gallery">
                 <?php
                 $this->widget('zii.widgets.CListView', array(
                     'dataProvider' => $dataProvider,
                     'template' => '{items}{pager}',
-                    'itemView' => '_events',
+                    'itemView' => '_gallery',
                     'pager' => array(
                         'header' => '',
                         'prevPageLabel' => '<i class="fa fa-backward"></i>',
@@ -26,20 +26,7 @@ $this->pageTitle = 'Events';
                     ),
                 ));
                 ?>
-            </div><!-- row clearfix -->
-        </div>
-    </div><!--end post_left-->
-    <div class="col-xs-12 col-sm-4 post_right pull-left">
-        <div class="post_right_inner">
-            <div class="related_post_sec">
-                <div class="list_block">
-                    <h3>Latest News</h3>
-                    <ul>
-                        <?php Content::get_latest_news(2); ?>
-                    </ul>
-                    <?php echo CHtml::link('More', array('content/news'), array('class' => 'more_post')); ?>
-                </div>                
-            </div><!--end related_post_sec-->
-        </div><!--end post right inner-->
-    </div><!--end post_right-->
+            </ul>
+        </div><!--end photo gallery-->
+    </div>
 </div>

@@ -1,4 +1,4 @@
-<?php //echo CHtml::encode(Yii::app()->name);             ?>        
+<?php //echo CHtml::encode(Yii::app()->name);              ?>        
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -165,7 +165,7 @@
                                 <li><?php echo CHtml::link(Content::getData(19, 'title'), array('content/view', 'id' => 19)); ?></li>
                                 <li><?php echo CHtml::link('Event', array('content/events')); ?></li>
                                 <li><?php echo CHtml::link('Gallery', array('content/gallery')); ?></li> 
-                                <li><?php echo CHtml::link('News', array('content/index', 'id' => 2)); ?></li> 
+                                <li><?php echo CHtml::link('News', array('content/news')); ?></li> 
                             </ul>
                         </div><!-- col-sm-3 col-xs-6 -->
 
@@ -242,6 +242,6 @@
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/plugins/moment.min.js"></script>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/plugins/fullcalendar.min.js"></script>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/options/optionswitcher.js"></script>
-        <script src="<?php //echo Yii::app()->theme->baseUrl;          ?>/js/custom.js"></script>
+        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/custom.js"></script>
     </body>
 </html>

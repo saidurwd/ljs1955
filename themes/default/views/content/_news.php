@@ -1,3 +1,4 @@
+
 <div class="post">
     <div class="post_thumb">
         <?php echo Content::get_images($data->id); ?>

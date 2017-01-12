@@ -33,11 +33,20 @@ $this->pageTitle = 'Notice Board';
         <div class="post_right_inner">
             <div class="related_post_sec">
                 <div class="list_block">
+                    <div class="upcoming_events">
+                        <h3>Upcoming Events</h3>
+                        <ul>
+                            <?php Content::get_latest_event(4); ?>
+                        </ul>
+                        <?php echo CHtml::link('More', array('content/events'), array('class' => 'more_post')); ?>
+                    </div>
+                </div>
+                <div class="list_block">
                     <h3>Latest News</h3>
                     <ul>
                         <?php Content::get_latest_news(2); ?>
                     </ul>
-                    <?php echo CHtml::link('More', array('content/index', 'id' => 2), array('class' => 'more_post')); ?>
+                    <?php echo CHtml::link('More', array('content/news'), array('class' => 'more_post')); ?>
                 </div>                
             </div><!--end related_post_sec-->
         </div><!--end post right inner-->
