@@ -1,34 +1,34 @@
 <?php
-$this->pageTitle = ContentCategory::getCategoryName($_GET['id']);
+$this->pageTitle = 'Events';
 ?>
 <div class="row">
-
     <div class="col-xs-12 col-sm-8 post_left pull-right">
-        <div class="post_left_section post_right_border">
-            <?php
-            $this->widget('zii.widgets.CListView', array(
-                'dataProvider' => $dataProvider,
-                'template' => '{items}{pager}',
-                'itemView' => '_view',
-                'pager' => array(
-                    'header' => '',
-                    'prevPageLabel' => '<i class="fa fa-backward"></i>',
-                    'nextPageLabel' => '<i class="fa fa-forward"></i>',
-                    'firstPageLabel' => '<i class="fa fa-fast-backward"></i>',
-                    'lastPageLabel' => '<i class="fa fa-fast-forward"></i>',
-                    'selectedPageCssClass' => 'active', //default "selected"
-                    'maxButtonCount' => 10, // defalut 10  
-                    'htmlOptions' => array(
-                        'class' => 'pagination',
-                        'style' => '',
-                        'id' => '',
+        <div class="upcoming_events event-col">
+            <div class="row clearfix">
+                <?php
+                $this->widget('zii.widgets.CListView', array(
+                    'dataProvider' => $dataProvider,
+                    'template' => '{items}{pager}',
+                    'itemView' => '_events',
+                    'pager' => array(
+                        'header' => '',
+                        'prevPageLabel' => '<i class="fa fa-backward"></i>',
+                        'nextPageLabel' => '<i class="fa fa-forward"></i>',
+                        'firstPageLabel' => '<i class="fa fa-fast-backward"></i>',
+                        'lastPageLabel' => '<i class="fa fa-fast-forward"></i>',
+                        'selectedPageCssClass' => 'active', //default "selected"
+                        'maxButtonCount' => 10, // defalut 10  
+                        'htmlOptions' => array(
+                            'class' => 'pagination',
+                            'style' => '',
+                            'id' => '',
+                        ),
                     ),
-                ),
-            ));
-            ?>
-        </div><!--end post left section-->
+                ));
+                ?>
+            </div><!-- row clearfix -->
+        </div>
     </div><!--end post_left-->
-
     <div class="col-xs-12 col-sm-4 post_right pull-left">
         <div class="post_right_inner">
             <div class="related_post_sec">

@@ -1,14 +1,16 @@
-
-<div class="post">
-    <div class="post_thumb">
-        <?php echo Content::get_images($data->id); ?>
-    </div><!--end post thumb-->
-    <div class="meta">
-        <span class="author">By: <?php echo UserAdmin::get_name($data->created_by); ?></span>
-        <span class="date">Posted: <?php echo Content::get_date_time($data->created); ?></span>
-    </div><!--end meta-->
-    <h1><?php echo CHtml::link($data->title, array('content/view', 'id' => $data->id)); ?></h1>
-    <div class="post_desc">
-        <?php echo Content::limit_text($data->introtext, 100); ?>
-    </div><!--end post desc-->
-</div><!--end post-->
+<div class="col-xs-6 col-sm-6">
+    <div class="related_post_sec single_post">
+        <span class="date-wrapper">
+            <span class="date"><?php echo Content::get_date_notice($data->created); ?></span>
+        </span>
+        <div class="rel_right">
+            <h4><?php echo CHtml::link($data->title, array('content/notice', 'id' => $data->id)); ?></h4>
+            <div class="meta">
+                <span class="place"><i class="fa fa-map-marker"></i>Main Campus</span>
+                <span class="event-time"><i class="fa fa-clock-o"></i>11.00 pm</span>
+            </div>
+            <?php echo Content::limit_text($data->introtext, 50); ?>
+            <?php echo CHtml::link('view Detals', array('content/notice', 'id' => $data->id), array('class' => 'btn btn-default commonBtn')); ?>
+        </div>
+    </div>
+</div>

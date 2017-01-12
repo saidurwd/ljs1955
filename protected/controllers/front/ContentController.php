@@ -53,18 +53,6 @@ class ContentController extends Controller {
         ));
     }
 
-    public function actionNotice($id) {
-        $this->render('notice', array(
-            'model' => $this->loadModel($id),
-        ));
-    }
-
-    public function actionEvent($id) {
-        $this->render('event', array(
-            'model' => $this->loadModel($id),
-        ));
-    }
-
     /**
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -140,10 +128,10 @@ class ContentController extends Controller {
         ));
     }
 
-    public function actionNotices($id) {
+    public function actionNotices() {
         $criteria = new CDbCriteria;
         $criteria->addCondition('state=1');
-        $criteria->addCondition('catid=' . (int) $id);
+        $criteria->addCondition('catid=3');
         $dataProvider = new CActiveDataProvider('Content', array(
             'criteria' => $criteria,
             'pagination' => array(
@@ -156,10 +144,16 @@ class ContentController extends Controller {
         ));
     }
 
-    public function actionEvents($id) {
+    public function actionNotice($id) {
+        $this->render('notice', array(
+            'model' => $this->loadModel($id),
+        ));
+    }
+
+    public function actionEvents() {
         $criteria = new CDbCriteria;
         $criteria->addCondition('state=1');
-        $criteria->addCondition('catid=' . (int) $id);
+        $criteria->addCondition('catid=4');
         $dataProvider = new CActiveDataProvider('Content', array(
             'criteria' => $criteria,
             'pagination' => array(
@@ -169,6 +163,12 @@ class ContentController extends Controller {
         $criteria->order = 'created DESC, id DESC';
         $this->render('events', array(
             'dataProvider' => $dataProvider,
+        ));
+    }
+
+    public function actionEvent($id) {
+        $this->render('event', array(
+            'model' => $this->loadModel($id),
         ));
     }
 
