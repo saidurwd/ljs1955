@@ -6,6 +6,11 @@ $this->pageTitle = 'Picture Gallery';
         <div class="photo_gallery custom">
             <ul class="gallery popup-gallery">
                 <?php
+                if (@$_REQUEST['id']) {
+                    echo '<h1>' . BannerCategory::getData(@$_REQUEST['id'], 'title') . '</h1>';
+                }
+                ?> 
+                <?php
                 $this->widget('zii.widgets.CListView', array(
                     'dataProvider' => $dataProvider,
                     'template' => '{items}{pager}',

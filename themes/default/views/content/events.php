@@ -4,7 +4,12 @@ $this->pageTitle = 'Events';
 <div class="row">
     <div class="col-xs-12 col-sm-8 post_left pull-right">
         <div class="upcoming_events event-col">
-            <div class="row clearfix">
+            <div class="row clearfix">                
+                <?php
+                if (@$_REQUEST['id']) {
+                    echo '<h1>' . ContentCategory::getCategoryName(@$_REQUEST['id']) . '</h1>';
+                }
+                ?>                              
                 <?php
                 $this->widget('zii.widgets.CListView', array(
                     'dataProvider' => $dataProvider,

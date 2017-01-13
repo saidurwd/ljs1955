@@ -1,4 +1,4 @@
-<?php //echo CHtml::encode(Yii::app()->name);              ?>        
+<?php //echo CHtml::encode(Yii::app()->name);                           ?>        
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -86,7 +86,7 @@
                                 <i class="fa fa-search"></i>
                             </a>
                             <ul class="dropdown-menu">
-                                <form action="http://themes.iamabdus.com/royal/1.2/courses.html" method="post">
+                                <form action="" method="post">
                                     <input type="text" placeholder="Course Name" id="exampleInputEmail1" class="form-control">
                                     <button class="btn btn-default commonBtn" type="submit">Search</button>
                                 </form>
@@ -138,8 +138,28 @@
                                             </li>
                                             <li><?php echo CHtml::link(Content::getData(15, 'title'), array('content/view', 'id' => 15)); ?></li>
                                             <li><?php echo CHtml::link(Content::getData(19, 'title'), array('content/view', 'id' => 19)); ?></li>
-                                            <li><?php echo CHtml::link('Event', array('content/events')); ?></li>
-                                            <li><?php echo CHtml::link('Gallery', array('content/gallery')); ?></li>                                             
+                                            <li class="dropdown">
+                                                <?php echo CHtml::link('Event', array('content/events', 'id' => 4), array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false')); ?>
+                                                <ul class="dropdown-menu">
+                                                    <?php
+                                                    $arrayEvent = ContentCategory::model()->findAll(array('condition' => 'parent_id=4 AND published=1', 'order' => 'title'));
+                                                    foreach ($arrayEvent as $key => $value) {
+                                                        echo '<li>' . CHtml::link($value->title, array('content/events', 'id' => $value->id)) . '</li>';
+                                                    }
+                                                    ?>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <?php echo CHtml::link('Gallery', array('content/gallery', 'id' => 2), array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false')); ?>
+                                                <ul class="dropdown-menu">
+                                                    <?php
+                                                    $arrayGallery = BannerCategory::model()->findAll(array('condition' => 'parent_id=2 AND published=1', 'order' => 'title'));
+                                                    foreach ($arrayGallery as $key => $value) {
+                                                        echo '<li>' . CHtml::link($value->title, array('content/gallery', 'id' => $value->id)) . '</li>';
+                                                    }
+                                                    ?>
+                                                </ul>
+                                            </li>                                            
                                             <li class="apply_now">
                                                 <?php echo CHtml::link('Contact us', array('site/contact')); ?>
                                             </li>                                            
@@ -151,9 +171,7 @@
                     </div><!-- /.container -->
                 </nav><!-- navbar -->
             </div>
-
             <?php echo $content; ?>
-
             <!--footer menu-->
             <div class="menuFooter clearfix">
                 <div class="container">

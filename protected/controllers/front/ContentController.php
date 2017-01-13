@@ -128,10 +128,15 @@ class ContentController extends Controller {
         ));
     }
 
-    public function actionGallery() {
+    public function actionGallery($id) {
         $criteria = new CDbCriteria;
         $criteria->addCondition('published=1');
-        $criteria->addCondition('catid IN(SELECT c.id FROM {{banner_category}} c WHERE c.id=2 OR c.parent_id=2)');
+        if ($id == 2) {
+            $criteria->addCondition('catid IN(SELECT c.id FROM {{banner_category}} c WHERE c.id=2 OR c.parent_id=2)');
+        } else {
+            $criteria->addCondition('catid=' . (int) $id);
+        }
+
         $dataProvider = new CActiveDataProvider('Banner', array(
             'criteria' => $criteria,
             'pagination' => array(
@@ -188,10 +193,14 @@ class ContentController extends Controller {
         ));
     }
 
-    public function actionEvents() {
+    public function actionEvents($id) {
         $criteria = new CDbCriteria;
         $criteria->addCondition('state=1');
-        $criteria->addCondition('catid=4');
+        if ($id == 4) {
+            $criteria->addCondition('catid IN(SELECT c.id FROM {{content_category}} c WHERE c.id=4 OR c.parent_id=4)');
+        } else {
+            $criteria->addCondition('catid=' . (int) $id);
+        }
         $dataProvider = new CActiveDataProvider('Content', array(
             'criteria' => $criteria,
             'pagination' => array(

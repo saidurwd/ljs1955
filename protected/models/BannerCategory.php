@@ -243,5 +243,14 @@ class BannerCategory extends CActiveRecord {
 
         return $option;
     }
+    
+    public static function getData($id, $field) {
+        $model = BannerCategory::model()->findByPk($id);
+        if (empty($model->$field)) {
+            return null;
+        } else {
+            return $model->$field;
+        }
+    }
 
 }

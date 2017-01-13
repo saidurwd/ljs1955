@@ -14,8 +14,7 @@ $this->pageTitle = $model->title;
                     <div class="single_post single-event">
                         <h1><?php echo $model->title; ?></h1>
                         <div class="meta">
-                            <span class="place"><i class="fa fa-map-marker"></i>Main Campus</span>
-                            <span class="event-time"><i class="fa fa-clock-o"></i>11.00 pm</span>
+                            <span class="place"><i class="fa fa-map-marker"></i><?php echo CHtml::link(ContentCategory::getData($model->catid, 'title'), array('content/events', 'id' => $model->catid)); ?></span>
                         </div>
                         <div class="post_desc">
                             <?php echo $model->introtext; ?>
