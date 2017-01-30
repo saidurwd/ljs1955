@@ -73,7 +73,7 @@
                         <ul>
                             <?php Content::get_recent_event(4); ?>                            
                         </ul>
-                        <?php echo CHtml::link('More Events', array('content/events'), array('class' => 'btn btn-default btn-block commonBtn')); ?>
+                        <?php //echo CHtml::link('More Events', array('content/events'), array('class' => 'btn btn-default btn-block commonBtn')); ?>
                     </div>
                 </div><!-- end list_block -->
             </div><!-- col-sm-4 col-xs-12 -->

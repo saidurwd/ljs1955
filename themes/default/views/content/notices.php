@@ -38,7 +38,7 @@ $this->pageTitle = 'Notice Board';
                         <ul>
                             <?php Content::get_latest_event(4); ?>
                         </ul>
-                        <?php echo CHtml::link('More', array('content/events'), array('class' => 'more_post')); ?>
+                        <?php //echo CHtml::link('More', array('content/events'), array('class' => 'more_post')); ?>
                     </div>
                 </div>
                 <div class="list_block">

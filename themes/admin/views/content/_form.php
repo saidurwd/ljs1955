@@ -64,11 +64,36 @@ Yii::app()->clientScript->registerScript('search', "
     </div>
 </div>
 <div class="row-fluid">
-    <div class="span6">
-        <?php echo $form->textAreaControlGroup($model, 'metakey', array('rows' => 2, 'cols' => 50, 'class' => 'span12')); ?>
+    <div class="span2">
+        <?php //echo $form->textAreaControlGroup($model, 'metakey', array('rows' => 2, 'cols' => 50, 'class' => 'span12')); ?>
+        <?php echo $form->labelEx($model, 'publish_up'); ?>
+        <?php
+        if ($model->isNewRecord) {
+            $model->publish_up = date('Y-m-d');  // default date
+        }
+        echo $form->widget('zii.widgets.jui.CJuiDatePicker', array(
+            'language' => 'en',
+            'model' => $model, // Model object
+            'attribute' => 'publish_up',
+            'options' => array(
+                'mode' => 'date',
+                'changeYear' => true,
+                'changeMonth' => true,
+                'yearRange' => '1900:2200',
+                'dateFormat' => 'yy-mm-dd',
+                'timeFormat' => '',
+                'showTimepicker' => false,
+            ),
+            'htmlOptions' => array(
+                'placeholder' => 'Register Date',
+                'class' => 'span12',
+            ),
+                ), true);
+        ?>
     </div>
-    <div class="span6">
-        <?php echo $form->textAreaControlGroup($model, 'metadesc', array('rows' => 2, 'cols' => 50, 'class' => 'span12')); ?>
+    <div class="span4">
+        <?php //echo $form->textAreaControlGroup($model, 'metadesc', array('rows' => 2, 'cols' => 50, 'class' => 'span12')); ?>
+        <?php echo $form->textFieldControlGroup($model, 'metadesc', array('class' => 'span12')); ?>
     </div>
 </div>
 <div class="form-actions">

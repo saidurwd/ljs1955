@@ -1,4 +1,4 @@
-<?php //echo CHtml::encode(Yii::app()->name);                           ?>        
+<?php //echo CHtml::encode(Yii::app()->name);                             ?>        
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -122,7 +122,7 @@
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-                                        <?php echo CHtml::link(CHtml::image(Yii::app()->baseUrl . '/img/logo.jpg', 'Logo', array('alt' => 'Logo')), array('site/index'), array('class' => 'navbar-brand logo clearfix')); ?>
+                                        <?php echo CHtml::link(CHtml::image(Yii::app()->baseUrl . '/img/logo.jpg', 'Logo', array('alt' => 'Logo')), array('site/index'), array('class' => 'navbar-brand logo clearfix', 'style' => 'width:100px;')); ?>
                                     </div>
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse" id="main-nav">
@@ -159,7 +159,14 @@
                                                     }
                                                     ?>
                                                 </ul>
-                                            </li>                                            
+                                            </li>    
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Alumni</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><?php echo CHtml::link('Contribution', array('content/view', 'id' => 24)); ?></li>
+                                                    <li><?php echo CHtml::link('Registration', array('user/create')); ?></li>               
+                                                </ul>
+                                            </li>
                                             <li class="apply_now">
                                                 <?php echo CHtml::link('Contact us', array('site/contact')); ?>
                                             </li>                                            
@@ -181,8 +188,6 @@
                             <ul class="menuLink clearfix">
                                 <li><?php echo CHtml::link(Content::getData(15, 'title'), array('content/view', 'id' => 15)); ?></li>
                                 <li><?php echo CHtml::link(Content::getData(19, 'title'), array('content/view', 'id' => 19)); ?></li>
-                                <li><?php echo CHtml::link('Event', array('content/events')); ?></li>
-                                <li><?php echo CHtml::link('Gallery', array('content/gallery')); ?></li> 
                                 <li><?php echo CHtml::link('News', array('content/news')); ?></li> 
                             </ul>
                         </div><!-- col-sm-3 col-xs-6 -->

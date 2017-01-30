@@ -27,13 +27,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 </div>
 <?php echo $form->textFieldControlGroup($model, 'clickurl', array('class' => 'span5', 'maxlength' => 200)); ?>
 <?php echo $form->labelEx($model, 'description'); ?>
-<?php
-$this->widget('application.extensions.xheditor.JXHEditor', array(
-    'model' => $model,
-    'attribute' => 'description',
-    'htmlOptions' => array('class' => 'xheditor-simple span6', 'style' => 'height: 150px;'),
-));
-?>
+<?php echo $form->textAreaControlGroup($model, 'description', array('rows' => 2, 'cols' => 50, 'class' => 'span6')); ?>
 <div class="row-fluid">
     <div class="span2">
         <?php echo $form->textFieldControlGroup($model, 'ordering', array('class' => 'span12')); ?>

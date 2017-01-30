@@ -128,10 +128,17 @@ $this->breadcrumbs = array(
                                                 </div>
                                             </div>
                                             <div class="profile-info-row">
-                                                <div class="profile-info-name"> Address </div>
+                                                <div class="profile-info-name"> Permanent Address </div>
 
                                                 <div class="profile-info-value">
                                                     <span><?php echo $model_profile->address; ?></span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-info-row">
+                                                <div class="profile-info-name"> Present Address </div>
+
+                                                <div class="profile-info-value">
+                                                    <span><?php echo $model_profile->residence_address; ?></span>
                                                 </div>
                                             </div>
                                             <div class="profile-info-row">
@@ -154,14 +161,7 @@ $this->breadcrumbs = array(
                                                 <div class="profile-info-value">
                                                     <span><?php echo $model_profile->fax; ?></span>
                                                 </div>
-                                            </div>
-                                            <div class="profile-info-row">
-                                                <div class="profile-info-name"> Expiry </div>
-
-                                                <div class="profile-info-value">
-                                                    <span><?php echo UserAdmin::get_date_time($model_profile->expiry); ?></span>
-                                                </div>
-                                            </div>
+                                            </div>       
                                             <div class="profile-info-row">
                                                 <div class="profile-info-name"> Birth Date </div>
 
@@ -170,34 +170,61 @@ $this->breadcrumbs = array(
                                                 </div>
                                             </div>
                                             <div class="profile-info-row">
-                                                <div class="profile-info-name"> Status </div>
-                                                <div class="profile-info-value">
-                                                    <span><?php echo $model->UserStatus->status; ?></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="hr hr-8 dotted"></div>
-                                        <div class="profile-user-info">
-                                            <div class="profile-info-row">
                                                 <div class="profile-info-name"> Website </div>
                                                 <div class="profile-info-value">
                                                     <?php echo $model_profile->website; ?>
                                                 </div>
                                             </div>
                                             <div class="profile-info-row">
-                                                <div class="profile-info-name">
-                                                    <i class="middle icon-facebook-sign bigger-150 blue"></i>
-                                                </div>
+                                                <div class="profile-info-name"> Blood Group </div>
                                                 <div class="profile-info-value">
-                                                    <a href="#">Find me on Facebook</a>
+                                                    <span><?php echo $model_profile->blood_group; ?></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="profile-info-row">
+                                                <div class="profile-info-name"> Batch </div>
+                                                <div class="profile-info-value">
+                                                    <span><?php echo $model_profile->batch; ?></span>
                                                 </div>
                                             </div>
                                             <div class="profile-info-row">
-                                                <div class="profile-info-name">
-                                                    <i class="middle icon-twitter-sign bigger-150 light-blue"></i>
-                                                </div>
+                                                <div class="profile-info-name"> Nick Name </div>
                                                 <div class="profile-info-value">
-                                                    <a href="#">Follow me on Twitter</a>
+                                                    <span><?php echo $model_profile->nick_name; ?></span>
+                                                </div>
+                                            </div>                                           
+                                        </div>
+                                        <div class="hr hr-8 dotted"></div>
+                                        <div class="profile-user-info">
+                                            <div class="profile-info-row">
+                                                <div class="profile-info-name"> Job Title </div>
+                                                <div class="profile-info-value">
+                                                    <span><?php echo $model_profile->job_title; ?></span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-info-row">
+                                                <div class="profile-info-name"> Company </div>
+                                                <div class="profile-info-value">
+                                                    <span><?php echo $model_profile->company; ?></span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-info-row">
+                                                <div class="profile-info-name"> Company Address </div>
+                                                <div class="profile-info-value">
+                                                    <span><?php echo $model_profile->company_address; ?></span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-info-row">
+                                                <div class="profile-info-name"> Office Phone </div>
+                                                <div class="profile-info-value">
+                                                    <span><?php echo $model_profile->office_phone; ?></span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-info-row">
+                                                <div class="profile-info-name"> Office Email </div>
+                                                <div class="profile-info-value">
+                                                    <span><?php echo $model_profile->office_email; ?></span>
                                                 </div>
                                             </div>
                                         </div>

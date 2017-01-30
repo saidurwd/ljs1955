@@ -81,9 +81,9 @@ $('.search-form form').submit(function(){
                         'htmlOptions' => array('style' => "text-align:center;"),
                     ),
                     array(
-                        'name' => 'created',
-                        'value' => 'UserAdmin::get_date($data->created)',
-                        'filter' => $this->widget('zii.widgets.jui.CJuiDatePicker', array('model' => $model, 'attribute' => 'created', 'htmlOptions' => array('id' => 'datepicker2', 'size' => '10',), 'i18nScriptFile' => 'jquery.ui.datepicker-en.js', 'defaultOptions' => array('showOn' => 'focus', 'dateFormat' => 'yy-mm-dd', 'showOtherMonths' => true, 'selectOtherMonths' => true, 'changeMonth' => true, 'changeYear' => true, 'showButtonPanel' => false,)), true),                        
+                        'name' => 'publish_up',
+                        'value' => 'UserAdmin::get_date($data->publish_up)',
+                        'filter' => $this->widget('zii.widgets.jui.CJuiDatePicker', array('model' => $model, 'attribute' => 'publish_up', 'htmlOptions' => array('id' => 'datepicker2', 'size' => '10',), 'i18nScriptFile' => 'jquery.ui.datepicker-en.js', 'defaultOptions' => array('showOn' => 'focus', 'dateFormat' => 'yy-mm-dd', 'showOtherMonths' => true, 'selectOtherMonths' => true, 'changeMonth' => true, 'changeYear' => true, 'showButtonPanel' => false,)), true),                        
                         'htmlOptions' => array('style' => "text-align:center;"),
                     ),
                     array(
