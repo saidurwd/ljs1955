@@ -139,7 +139,7 @@
                                             <li><?php echo CHtml::link(Content::getData(15, 'title'), array('content/view', 'id' => 15)); ?></li>
                                             <li><?php echo CHtml::link(Content::getData(19, 'title'), array('content/view', 'id' => 19)); ?></li>
                                             <li class="dropdown">
-                                                <?php echo CHtml::link('Event', array('content/events', 'id' => 4), array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false')); ?>
+                                                <?php echo CHtml::link('Events', array('content/events', 'id' => 4), array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false')); ?>
                                                 <ul class="dropdown-menu">
                                                     <?php
                                                     $arrayEvent = ContentCategory::model()->findAll(array('condition' => 'parent_id=4 AND published=1', 'order' => 'title'));

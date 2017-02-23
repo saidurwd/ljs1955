@@ -299,16 +299,16 @@ class Content extends CActiveRecord {
     }
 
     public static function get_recent_notice($id) {
-        $array = Content::model()->findAll(array('condition' => 'catid=' . (int) $id . ' AND state=1', 'order' => 'publish_up DESC', 'limit' => '3'));
+        $array = Content::model()->findAll(array('condition' => 'catid=' . (int) $id . ' AND state=1', 'order' => 'publish_up DESC', 'limit' => '5'));
         foreach ($array as $key => $value) {
             echo '<li class="related_post_sec single_post">';
             echo '<span class="date-wrapper">';
             echo '<span class="date">' . Content::get_date_notice($value['publish_up']) . '</span>';
             echo '</span>';
             echo '<div class="rel_right">';
-            echo '<h4>' . CHtml::link(Content::limit_text($value['title'], 6), array('content/notice', 'id' => $value['id']), array()) . '</h4>';
+            echo '<h4>' . CHtml::link(Content::limit_text($value['title'], 50), array('content/notice', 'id' => $value['id']), array()) . '</h4>';
             echo '<div class="meta">';
-            echo '<span class="place"><i class="fa fa-map-marker"></i>Bengali Section</span>';
+            echo '<span class="place"><i class="fa fa-map-marker"></i>' . Content::getData($value['id'], 'metadesc') . '</span>';
             echo '</div>';
             echo '</div>';
             echo '</li>';
@@ -397,14 +397,14 @@ class Content extends CActiveRecord {
             echo CHtml::image(Yii::app()->baseUrl . '/uploads/banners/' . $value['banner'], $value['name'], array('class' => 'img-responsive'));
             echo '<div class="banner_caption">';
             echo '<div class="container">';
-            echo '<div class="row">';
-            echo '<div class="col-xs-12">';
-            echo '<div class="caption_inner animated fadeInUp">';
-            echo '<h1>' . $value['name'] . '</h1>';
-            echo '<p>' . $value['description'] . '</p>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
+            //echo '<div class="row">';
+            //echo '<div class="col-xs-12">';
+            //echo '<div class="caption_inner animated fadeInUp">';
+            //echo '<h1>' . $value['name'] . '</h1>';
+            //echo '<p>' . $value['description'] . '</p>';
+            //echo '</div>';
+            //echo '</div>';
+            //echo '</div>';
             echo '</div>';
             echo '</div>';
             echo '</div>';
