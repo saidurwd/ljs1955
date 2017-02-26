@@ -45,14 +45,14 @@
                             </div><!-- videoLeft -->
                             <div class="col-lg-4 col-md-5 col-xs-12 videoRight">
                                 <?php echo '<p>' . Content::limit_text(Content::getData(3, 'introtext'), 44) . '</p>'; ?>
-                                <?php echo CHtml::link('Learn More', array('content/view', 'id' => 3), array('class' => 'btn btn-block learnBtn')); ?>
+                                <?php echo CHtml::link('Learn More', array('content/view', 'id' => 3), array('class' => 'btn btn-block btn-green')); ?>
                             </div><!-- videoRight -->
                         </div><!-- row -->
                     </div><!-- videoArea -->
                     <div class="related_post_sec single_post">
-                        <h3>Recent News</h3>
+                        <h3>Events</h3>
                         <ul>
-                            <?php Content::get_recent_news(2); ?>
+                            <?php Content::get_recent_news(4); ?>
                         </ul>
                     </div><!--related_post_sec-->
                     <div class="clearfix"></div>
@@ -65,7 +65,7 @@
                             </ul>
                             <div class="clearfix"></div>
                             <br />
-                            <?php echo CHtml::link('More Notices', array('content/notices'), array('class' => 'btn btn-default btn-block commonBtn')); ?>
+                            <?php echo CHtml::link('More Notices', array('content/notices'), array('class' => 'btn btn-default btn-block btn-green')); ?>
                         </div>
                     </div><!-- end list_block --> 
                 </div><!--videoNine-->
@@ -76,7 +76,7 @@
                         <h3><?php echo Content::get_title(16); ?></h3>
                         <?php echo Content::get_images(16); ?>
                         <?php echo '<p>' . Content::limit_text(Content::getData(16, 'introtext'), 44) . '</p>'; ?>
-                        <?php echo CHtml::link('Read More', array('content/view', 'id' => 16), array('class' => 'btn btn-block learnBtn')); ?>
+                        <?php echo CHtml::link('Read More', array('content/view', 'id' => 16), array('class' => 'btn btn-block btn-green')); ?>
                     </div>
                 </div><!-- end Principal Message -->
                 <div class="list_block related_post_sec">
@@ -84,7 +84,7 @@
                         <h3><?php echo Content::get_title(17); ?></h3>
                         <?php echo Content::get_images(17); ?>
                         <?php echo '<p>' . Content::limit_text(Content::getData(17, 'introtext'), 44) . '</p>'; ?>
-                        <?php echo CHtml::link('Read More', array('content/view', 'id' => 17), array('class' => 'btn btn-block learnBtn')); ?>
+                        <?php echo CHtml::link('Read More', array('content/view', 'id' => 17), array('class' => 'btn btn-block btn-green')); ?>
                     </div>
                 </div><!-- end Vice Principal Message -->                
                 <div class="list_block related_post_sec">

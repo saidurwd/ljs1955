@@ -265,7 +265,7 @@ class Content extends CActiveRecord {
     }
 
     public static function get_recent_news($id) {
-        $array = Content::model()->findAll(array('condition' => 'catid=' . (int) $id . ' AND state=1', 'order' => 'publish_up DESC', 'limit' => '2'));
+        $array = Content::model()->findAll(array('condition' => 'catid IN(SELECT c.id FROM {{content_category}} c WHERE c.id=' . (int) $id . ' OR c.parent_id=' . (int) $id . ') AND state=1', 'order' => 'publish_up DESC', 'limit' => '2'));
         foreach ($array as $key => $value) {
             echo '<li>';
             echo '<span class="rel_thumb">';

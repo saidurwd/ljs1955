@@ -17,6 +17,9 @@ $this->pageTitle = $model->title;
                             <span class="place"><i class="fa fa-map-marker"></i><?php echo CHtml::link(ContentCategory::getData($model->catid, 'title'), array('content/events', 'id' => $model->catid)); ?></span>
                             <i class="fa fa-clock-o"></i><?php echo $model->metadesc; ?>
                         </div>
+                        <div class="post_thumb">
+                            <?php Content::get_image_view($model->id); ?>
+                        </div><!--end post thumb-->
                         <div class="post_desc">
                             <?php echo $model->introtext; ?>
                         </div><!--end post desc-->

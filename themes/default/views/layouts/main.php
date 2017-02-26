@@ -1,4 +1,4 @@
-<?php //echo CHtml::encode(Yii::app()->name);                             ?>        
+<?php //echo CHtml::encode(Yii::app()->name);                                ?>        
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -67,46 +67,49 @@
         <!--/option-switcher-->
         <div class="main_wrapper">
             <!--top email, phone and social icon-->
-            <div class="topbar clearfix">
-                <div class="container">
-                    <ul class="topbar-left">
-                        <li class="phoneNo"><i class="fa fa-phone"></i>+880 2 9552854, +880 2 9562502</li>
-                        <li class="email-id hidden-xs hidden-sm"><i class="fa fa-envelope"></i>
-                            <a href="mailto:ljs1955@dhaka.net">ljs1955@dhaka.net</a>
-                        </li>
-                    </ul>
-                    <ul class="topbar-right">
-                        <li class="hidden-xs"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="hidden-xs"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="hidden-xs"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li class="hidden-xs"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-                        <li class="hidden-xs"><a href="#"><i class="fa fa-rss"></i></a></li>
-                        <li class="dropdown top-search list-inline">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-search"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <form action="" method="post">
-                                    <input type="text" placeholder="Course Name" id="exampleInputEmail1" class="form-control">
-                                    <button class="btn btn-default commonBtn" type="submit">Search</button>
-                                </form>
-                            </ul>
-                        </li>
-                        <li class="dropdown language">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-globe"></i>EN
-                                <i class="fa fa-caret-down"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="active">
-                                    <a href="#">English </a> 
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+            <!--            <div class="topbar clearfix">
+                            <div class="container">
+                                <ul class="topbar-left">
+                                    <li class="phoneNo"><i class="fa fa-phone"></i>+880 2 9552854, +880 2 9562502</li>
+                                    <li class="email-id hidden-xs hidden-sm"><i class="fa fa-envelope"></i>
+                                        <a href="mailto:ljs1955@dhaka.net">ljs1955@dhaka.net</a>
+                                    </li>
+                                </ul>
+                                <ul class="topbar-right">
+                                    <li class="hidden-xs"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="hidden-xs"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="hidden-xs"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li class="hidden-xs"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                    <li class="hidden-xs"><a href="#"><i class="fa fa-rss"></i></a></li>
+                                    <li class="dropdown top-search list-inline">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <form action="" method="post">
+                                                <input type="text" placeholder="Course Name" id="exampleInputEmail1" class="form-control">
+                                                <button class="btn btn-default commonBtn" type="submit">Search</button>
+                                            </form>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown language">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-globe"></i>EN
+                                            <i class="fa fa-caret-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="active">
+                                                <a href="#">English </a> 
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>-->
+            <div class="banner-bgcolor clearfix">
+                <div class="container banner-image">                    
                 </div>
             </div>
-
             <!--top nav bar-->
             <div class="header clearfix">
                 <nav class="navbar navbar-main navbar-default">
@@ -122,7 +125,7 @@
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-                                        <?php echo CHtml::link(CHtml::image(Yii::app()->baseUrl . '/img/logo.jpg', 'Logo', array('alt' => 'Logo')), array('site/index'), array('class' => 'navbar-brand logo clearfix', 'style' => 'width:100px;')); ?>
+                                        <?php echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . '/img/logo.jpg', 'Logo', array('alt' => 'Logo')), array('site/index'), array('class' => 'navbar-brand logo clearfix', 'style' => 'width:100px;')); ?>
                                     </div>
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse" id="main-nav">
