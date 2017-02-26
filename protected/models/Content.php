@@ -325,7 +325,7 @@ class Content extends CActiveRecord {
             echo '<div class="rel_right">';
             echo '<h4>' . CHtml::link(Content::limit_text($value['title'], 6), array('content/event', 'id' => $value['id']), array()) . '</h4>';
             echo '<div class="meta">';
-            echo '<span class="place"><i class="fa fa-map-marker"></i>English</span>';
+            echo '<span class="place"><i class="fa fa-map-marker"></i>' . $value['metadesc'] . '</span>';
             echo '<span class="event-time"><i class="fa fa-clock-o"></i>' . Content::get_date_time($value['publish_up']) . '</span>';
             echo '</div>';
             echo '</div>';
@@ -343,7 +343,7 @@ class Content extends CActiveRecord {
             echo '<div class="rel_right">';
             echo '<h4>' . CHtml::link(Content::limit_text($value['title'], 6), array('content/event', 'id' => $value['id']), array()) . '</h4>';
             echo '<div class="meta">';
-            echo '<span class="place"><i class="fa fa-map-marker"></i>English</span>';
+            echo '<span class="place"><i class="fa fa-map-marker"></i>' . $value['metadesc'] . '</span>';
             echo '<span class="event-time"><i class="fa fa-clock-o"></i>' . Content::get_date_time($value['publish_up']) . '</span>';
             echo '</div>';
             echo '</div>';

@@ -201,7 +201,7 @@
                                 <li><?php echo CHtml::link(Content::getData(17, 'title'), array('content/view', 'id' => 17)); ?></li>
                                 <li><?php echo CHtml::link(Content::getData(18, 'title'), array('content/view', 'id' => 18)); ?></li> 
                                 <li><?php echo CHtml::link('Paintings', array('content/index', 'id' => 6)); ?></li>       
-                                <li><?php echo CHtml::link('Notice Board', array('content/notices')); ?></li>                                     
+                                <li><?php echo CHtml::link('Announcement', array('content/notices')); ?></li>                                     
                             </ul>
                         </div><!-- col-sm-3 col-xs-6 -->
 

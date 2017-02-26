@@ -59,13 +59,13 @@
                     <br />
                     <div class="list_block related_post_sec">
                         <div class="upcoming_events">
-                            <h3>Notice Board</h3>
+                            <h3>Announcement</h3>
                             <ul>
                                 <?php Content::get_recent_notice(3); ?>
                             </ul>
                             <div class="clearfix"></div>
                             <br />
-                            <?php echo CHtml::link('More Notices', array('content/notices'), array('class' => 'btn btn-default btn-block btn-green')); ?>
+                            <?php echo CHtml::link('More Announcement', array('content/notices'), array('class' => 'btn btn-default btn-block btn-green')); ?>
                         </div>
                     </div><!-- end list_block --> 
                 </div><!--videoNine-->

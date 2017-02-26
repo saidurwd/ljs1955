@@ -1,5 +1,5 @@
 <?php
-$this->pageTitle = 'Notice Board';
+$this->pageTitle = 'Announcement';
 ?>
 <div class="row">
     <div class="col-xs-12 col-sm-8 post_left pull-right">
