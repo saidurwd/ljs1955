@@ -1,4 +1,4 @@
-<?php //echo CHtml::encode(Yii::app()->name);                                ?>        
+<?php //echo CHtml::encode(Yii::app()->name);                                 ?>        
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -107,7 +107,16 @@
                             </div>
                         </div>-->
             <div class="banner-bgcolor clearfix">
-                <div class="container banner-image">                    
+                <div class="container">                    
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <?php echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . '/images/logo.jpg', 'Logo', array('alt' => 'Logo')), array('site/index'), array('class' => 'img-responsive')); ?>
+                        </div>
+                        <div class="col-xs-10">
+                            <div class="banner-text">Little Jewels Nursery Infant And Junior School</div>
+                            <div class="banner-text-small">The aim of education is the knowledge, not of fact, but of values.</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!--top nav bar-->
@@ -125,7 +134,7 @@
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-                                        <?php echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . '/img/logo.jpg', 'Logo', array('alt' => 'Logo')), array('site/index'), array('class' => 'navbar-brand logo clearfix', 'style' => 'width:100px;')); ?>
+                                        <?php //echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . '/img/logo.jpg', 'Logo', array('alt' => 'Logo')), array('site/index'), array('class' => 'navbar-brand logo clearfix', 'style' => 'width:100px;')); ?>
                                     </div>
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse" id="main-nav">
@@ -186,7 +195,6 @@
             <div class="menuFooter clearfix">
                 <div class="container">
                     <div class="row clearfix">
-
                         <div class="col-sm-3 col-xs-6">
                             <ul class="menuLink clearfix">
                                 <li><?php echo CHtml::link(Content::getData(15, 'title'), array('content/view', 'id' => 15)); ?></li>
@@ -194,7 +202,6 @@
                                 <li><?php echo CHtml::link('News', array('content/news')); ?></li> 
                             </ul>
                         </div><!-- col-sm-3 col-xs-6 -->
-
                         <div class="col-sm-3 col-xs-6 borderLeft clearfix">
                             <ul class="menuLink clearfix">
                                 <li><?php echo CHtml::link(Content::getData(16, 'title'), array('content/view', 'id' => 16)); ?></li>
@@ -204,7 +211,6 @@
                                 <li><?php echo CHtml::link('Announcement', array('content/notices')); ?></li>                                     
                             </ul>
                         </div><!-- col-sm-3 col-xs-6 -->
-
                         <div class="col-sm-3 col-xs-6 borderLeft clearfix">
                             <div class="footer-address">
                                 <h5>Location:</h5>
@@ -216,7 +222,6 @@
                                 <?php echo CHtml::link('<span class="place"><i class="fa fa-map-marker"></i>Main Campus</span>', array('site/contact')); ?>
                             </div>
                         </div><!-- col-sm-3 col-xs-6 -->
-
                         <div class="col-sm-3 col-xs-6 borderLeft clearfix">
                             <div class="socialArea clearfix">
                                 <h5>Find us on:</h5>
