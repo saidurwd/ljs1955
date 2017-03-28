@@ -38,14 +38,14 @@
             <div class="col-sm-8 col-xs-12">
                 <div class="videoNine clearfix">
                     <div class="videoArea clearfix">
-                        <h3><?php echo Content::getData(3, 'title'); ?></h3>
+                        <h3 style="font-size:20px;"><?php echo Content::getData(3, 'title'); ?></h3>
                         <div class="row">
-                            <div class="col-lg-8 col-md-7 col-xs-12 videoLeft">
-                                <?php echo Content::get_images(3); ?>
-                            </div><!-- videoLeft -->
-                            <div class="col-lg-4 col-md-5 col-xs-12 videoRight">
-                                <?php echo '<p>' . Content::limit_text(Content::getData(3, 'introtext'), 44) . '</p>'; ?>
-                                <?php echo CHtml::link('Learn More', array('content/view', 'id' => 3), array('class' => 'btn btn-block btn-green')); ?>
+                            <!--<div class="col-lg-8 col-md-7 col-xs-12 videoLeft">
+                            <?php //echo Content::get_images(3); ?>
+                            </div>-->
+                            <div class="col-lg-12 col-md-12 col-xs-12 videoRight">
+                                <?php echo '<p>' . Content::limit_text(Content::getData(3, 'introtext'), 200) . '</p>'; ?>
+                                <?php //echo CHtml::link('Learn More', array('content/view', 'id' => 3), array('class' => 'btn btn-block btn-green')); ?>
                             </div><!-- videoRight -->
                         </div><!-- row -->
                     </div><!-- videoArea -->
