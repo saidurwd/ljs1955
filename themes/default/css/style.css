@@ -2,7 +2,7 @@
 .banner-bgcolor{
     background-color: #000055;
     border-top: 5px solid #000055;
-    border-bottom: 5px solid #000055
+    border-bottom: 5px solid #000055;
 }
 .banner-image{
     background: transparent url("../img/banner.jpg") no-repeat; 

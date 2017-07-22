@@ -101,6 +101,7 @@
     </div><!-- container -->
 </div>
 <!-- end mainContent -->
+<?php /*
 <!--testimonial-->
 <div class="testimonial-section clearfix"> 
     <div class="container">
@@ -119,3 +120,4 @@
         </div><!-- row -->
     </div><!-- container -->
 </div><!-- testimonial-section -->
+ */ ?>
