@@ -133,7 +133,7 @@ class Content extends CActiveRecord {
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
             'pagination' => array(
-                'pageSize' => Yii::app()->params['pageSize'],
+                'pageSize' => Yii::app()->params['pageSize20'],
             ),
             'sort' => array('defaultOrder' => 'created DESC, id DESC')
         ));

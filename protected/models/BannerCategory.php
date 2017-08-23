@@ -103,7 +103,7 @@ class BannerCategory extends CActiveRecord {
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
             'pagination' => array(
-                'pageSize' => Yii::app()->params['pageSize'],
+                'pageSize' => Yii::app()->params['pageSize20'],
             ),
         ));
     }
@@ -243,7 +243,7 @@ class BannerCategory extends CActiveRecord {
 
         return $option;
     }
-    
+
     public static function getData($id, $field) {
         $model = BannerCategory::model()->findByPk($id);
         if (empty($model->$field)) {
@@ -251,6 +251,24 @@ class BannerCategory extends CActiveRecord {
         } else {
             return $model->$field;
         }
+    }
+
+    /*
+     * get total content for specific category
+     */
+
+    public static function getNumberOfContent($id) {
+        $value = Banner::model()->findAll(array('condition' => 'catid=' . (int) $id));
+        return count($value);
+    }
+
+    /*
+     * get total sub category for specific category
+     */
+
+    public static function getNumberOfSubCategory($id) {
+        $value = BannerCategory::model()->findAll(array('condition' => 'parent_id=' . (int) $id));
+        return count($value);
     }
 
 }
