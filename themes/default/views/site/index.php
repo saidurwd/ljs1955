@@ -86,7 +86,8 @@
                         <?php echo '<p>' . Content::limit_text(Content::getData(17, 'introtext'), 44) . '</p>'; ?>
                         <?php echo CHtml::link('Read More', array('content/view', 'id' => 17), array('class' => 'btn btn-block btn-green')); ?>
                     </div>
-                </div><!-- end Vice Principal Message -->                
+                </div><!-- end Vice Principal Message -->     
+                <?php /*
                 <div class="list_block related_post_sec">
                     <div class="upcoming_events">
                         <h3>Upcoming Events</h3>
@@ -96,6 +97,7 @@
                         <?php //echo CHtml::link('More Events', array('content/events'), array('class' => 'btn btn-default btn-block commonBtn')); ?>
                     </div>
                 </div><!-- end list_block -->
+                */ ?>
             </div><!-- col-sm-4 col-xs-12 -->
         </div><!-- row clearfix -->
     </div><!-- container -->

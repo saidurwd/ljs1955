@@ -4,7 +4,7 @@
 $this->pageTitle = $model->title;
 ?>
 <div class="row clearfix">
-    <div class="col-xs-12 col-sm-8 post_left">
+    <div class="col-xs-12 col-sm-12 post_left">
         <div class="upcoming_events event-col">
             <div class="related_post_sec single_post">
                 <span class="date-wrapper">
@@ -24,6 +24,7 @@ $this->pageTitle = $model->title;
             </div>
         </div>
     </div><!--end post_left-->
+    <?php /* 
     <div class="col-xs-12 col-sm-4 post_right">
         <div class="post_right_inner">
             <div class="related_post_sec">
@@ -38,4 +39,5 @@ $this->pageTitle = $model->title;
             </div><!--end related_post_sec-->
         </div><!--end post right inner-->
     </div><!--end post_right-->
+    */ ?>
 </div><!--row-->

@@ -2,7 +2,7 @@
 $this->pageTitle = 'Events';
 ?>
 <div class="row">
-    <div class="col-xs-12 col-sm-8 post_left pull-right">
+    <div class="col-xs-12 col-sm-12 post_left pull-right">
         <div class="upcoming_events event-col">
             <div class="row clearfix">                
                 <?php
@@ -34,6 +34,7 @@ $this->pageTitle = 'Events';
             </div><!-- row clearfix -->
         </div>
     </div><!--end post_left-->
+    <?php /* 
     <div class="col-xs-12 col-sm-4 post_right pull-left">
         <div class="post_right_inner">
             <div class="related_post_sec">
@@ -47,4 +48,5 @@ $this->pageTitle = 'Events';
             </div><!--end related_post_sec-->
         </div><!--end post right inner-->
     </div><!--end post_right-->
+     */ ?>
 </div>

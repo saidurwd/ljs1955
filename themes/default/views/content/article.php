@@ -4,8 +4,8 @@
 $this->pageTitle = $model->title;
 ?>
 <div class="row">
-    <div class="col-xs-12 col-sm-8 post_left pull-right">
-        <div class="post_left_section post_right_border">
+    <div class="col-xs-12 col-sm-12 post_left pull-right">
+        <div class="post_left_section">
             <div class="post single_post">
                 <div class="post_thumb">
                     <?php Content::get_image_view($model->id); ?>
@@ -22,6 +22,7 @@ $this->pageTitle = $model->title;
             </div><!--end post-->
         </div><!--end post left section-->
     </div>
+    <?php /* 
     <div class="col-xs-12 col-sm-4 post_right pull-left">
         <div class="post_right_inner">
             <div class="related_post_sec">
@@ -44,4 +45,5 @@ $this->pageTitle = $model->title;
             </div><!--end related_post_sec-->
         </div><!--end post right inner-->
     </div><!--end post_right-->
+    */ ?>
 </div>

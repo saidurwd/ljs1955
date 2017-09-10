@@ -2,9 +2,8 @@
 $this->pageTitle = 'News';
 ?>
 <div class="row">
-
-    <div class="col-xs-12 col-sm-8 post_left pull-right">
-        <div class="post_left_section post_right_border">
+    <div class="col-xs-12 col-sm-12 post_left pull-right">
+        <div class="post_left_section">
             <?php
             $this->widget('zii.widgets.CListView', array(
                 'dataProvider' => $dataProvider,
@@ -28,7 +27,7 @@ $this->pageTitle = 'News';
             ?>
         </div><!--end post left section-->
     </div><!--end post_left-->
-
+    <?php /*
     <div class="col-xs-12 col-sm-4 post_right pull-left">
         <div class="post_right_inner">
             <div class="related_post_sec">
@@ -42,4 +41,5 @@ $this->pageTitle = 'News';
             </div><!--end related_post_sec-->
         </div><!--end post right inner-->
     </div><!--end post_right-->
+    */ ?>
 </div>
