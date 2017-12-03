@@ -244,6 +244,28 @@ class BannerCategory extends CActiveRecord {
         return $option;
     }
 
+    public static function getEventMenue($id) { //6 
+        echo '<ul class="dropdown-menu">';
+        $arrayEvent = BannerCategory::model()->findAll(array('condition' => 'parent_id=' . (int) $id . ' AND published=1', 'order' => 'title'));
+        foreach ($arrayEvent as $key => $value) {
+            $arrayEventChild = BannerCategory::model()->findAll(array('condition' => 'parent_id=' . (int) $value->id . ' AND published=1', 'order' => 'title'));
+            $total = count($arrayEventChild);
+            if ($total <= 1) {
+                echo '<li>' . CHtml::link($value->title, array('content/gallery', 'id' => $value->id)) . '</li>';
+            } else {
+                echo '<li class="dropdown">';
+                echo CHtml::link($value->title, array('content/gallery', 'id' => $value->id));
+                echo '<ul class="dropdown-menu">';
+                foreach ($arrayEventChild as $key1 => $value1) {
+                    echo '<li>' . CHtml::link($value1->title, array('content/gallery', 'id' => $value1->id)) . '</li>';
+                }
+                echo '</ul>';
+                echo '</li>';
+            }
+        }
+        echo '</ul>';
+    }
+
     public static function getData($id, $field) {
         $model = BannerCategory::model()->findByPk($id);
         if (empty($model->$field)) {

@@ -1,4 +1,4 @@
-<?php //echo CHtml::encode(Yii::app()->name);                                 ?>        
+<?php //echo CHtml::encode(Yii::app()->name);                                  ?>        
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -152,14 +152,7 @@
                                             <li><?php echo CHtml::link(Content::getData(19, 'title'), array('content/view', 'id' => 19)); ?></li>
                                             <li class="dropdown">
                                                 <?php echo CHtml::link('Events', array('content/events', 'id' => 4), array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false')); ?>
-                                                <ul class="dropdown-menu">
-                                                    <?php
-                                                    $arrayEvent = ContentCategory::model()->findAll(array('condition' => 'parent_id=4 AND published=1', 'order' => 'title'));
-                                                    foreach ($arrayEvent as $key => $value) {
-                                                        echo '<li>' . CHtml::link($value->title, array('content/events', 'id' => $value->id)) . '</li>';
-                                                    }
-                                                    ?>
-                                                </ul>
+                                                <?php BannerCategory::getEventMenue(6); ?>
                                             </li>
                                             <li class="dropdown">
                                                 <?php echo CHtml::link('Gallery', array('content/gallery', 'id' => 2), array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false')); ?>
