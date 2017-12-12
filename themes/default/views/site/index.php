@@ -49,14 +49,16 @@
                             </div><!-- videoRight -->
                         </div><!-- row -->
                     </div><!-- videoArea -->
+                    <!-- 
                     <div class="related_post_sec single_post">
                         <h3>Events</h3>
                         <ul>
-                            <?php Content::get_recent_news(4); ?>
+                            <?php //Banner::get_recent_events(6); ?>
                         </ul>
-                    </div><!--related_post_sec-->
+                    </div>
                     <div class="clearfix"></div>
                     <br />
+                    -->
                     <div class="list_block related_post_sec">
                         <div class="upcoming_events">
                             <h3>Announcement</h3>

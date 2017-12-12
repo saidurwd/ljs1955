@@ -154,4 +154,39 @@ class Banner extends CActiveRecord {
         return $returnValue;
     }
 
+    public static function get_images($id) {
+        $value = Banner::model()->findByAttributes(array('id' => $id));
+        $filePath = Yii::app()->basePath . '/../uploads/banners/' . $value->banner;
+        if ((is_file($filePath)) && (file_exists($filePath))) {
+            echo CHtml::image(Yii::app()->baseUrl . '/uploads/banners/' . $value->banner, 'Picture', array('alt' => $value->name, 'class' => 'img-responsive img-thumbnail', 'title' => $value->name, 'style' => ''));
+        } else {
+            echo CHtml::image(Yii::app()->baseUrl . '/uploads/banners/default.jpg', 'Picture', array('alt' => $value->name, 'class' => 'img-responsive img-thumbnail', 'title' => $value->name, 'style' => ''));
+        }
+    }
+
+    public static function get_recent_events($id) {
+        $array = BannerCategory::model()->findAll(array('condition' => 'parent_id=' . (int) $id . ' AND published=1', 'order' => 'RAND()', 'limit' => '2'));
+        foreach ($array as $key => $value) {
+            echo '<li>';
+            echo '<span class="rel_thumb">';
+            $criteria = new CDbCriteria;
+            $criteria->select = 'id,name,banner';
+            $criteria->condition = "catid=:catid";
+            $criteria->addCondition("published=:published");
+            $criteria->params = array(':catid' => (int) $value['id'], ':published' => 1);
+            $record = Banner::model()->find($criteria);
+            if ($record['id']) {
+                echo Banner::get_images($record['id']);
+            } else {
+                echo CHtml::image(Yii::app()->baseUrl . '/uploads/banners/default.jpg', 'Picture', array('class' => 'img-responsive img-thumbnail', 'style' => ''));
+            }
+            echo '</span>';
+            echo '<div class="rel_right">';
+            echo '<h4>' . CHtml::link($value['title'], array('content/gallery', 'id' => $value['id']), array()) . '</h4>';
+            echo Content::limit_text($value['description'], 40);
+            echo '</div>';
+            echo '</li>';
+        }
+    }
+
 }

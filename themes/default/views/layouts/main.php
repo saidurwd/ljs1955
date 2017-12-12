@@ -145,7 +145,7 @@
                                                 <ul class="dropdown-menu">
                                                     <li><?php echo CHtml::link(Content::getData(16, 'title'), array('content/view', 'id' => 16)); ?></li>
                                                     <li><?php echo CHtml::link(Content::getData(17, 'title'), array('content/view', 'id' => 17)); ?></li>
-                                                    <li><?php echo CHtml::link(Content::getData(18, 'title'), array('content/view', 'id' => 18)); ?></li>                  
+<!--                                                    <li><?php //echo CHtml::link(Content::getData(18, 'title'), array('content/view', 'id' => 18)); ?></li>                  -->
                                                 </ul>
                                             </li>
                                             <li><?php echo CHtml::link(Content::getData(15, 'title'), array('content/view', 'id' => 15)); ?></li>
