@@ -145,7 +145,8 @@
                                                 <ul class="dropdown-menu">
                                                     <li><?php echo CHtml::link(Content::getData(16, 'title'), array('content/view', 'id' => 16)); ?></li>
                                                     <li><?php echo CHtml::link(Content::getData(17, 'title'), array('content/view', 'id' => 17)); ?></li>
-<!--                                                    <li><?php //echo CHtml::link(Content::getData(18, 'title'), array('content/view', 'id' => 18)); ?></li>                  -->
+                                                    <li><?php echo CHtml::link(ContentCategory::getData(7, 'title'), array('content/index', 'id' => 7)); ?></li>       
+                                                    <li><?php echo CHtml::link(Content::getData(18, 'title'), array('content/view', 'id' => 18)); ?></li>                  
                                                 </ul>
                                             </li>
                                             <li><?php echo CHtml::link(Content::getData(15, 'title'), array('content/view', 'id' => 15)); ?></li>
@@ -191,8 +192,9 @@
                         <div class="col-sm-3 col-xs-6">
                             <ul class="menuLink clearfix">
                                 <li><?php echo CHtml::link(Content::getData(15, 'title'), array('content/view', 'id' => 15)); ?></li>
-                                <li><?php echo CHtml::link(Content::getData(19, 'title'), array('content/view', 'id' => 19)); ?></li>
-                                <li><?php echo CHtml::link('News', array('content/news')); ?></li> 
+                                <li><?php echo CHtml::link(Content::getData(19, 'title'), array('content/view', 'id' => 19)); ?></li>                                       
+                                <li><?php echo CHtml::link('News', array('content/news')); ?></li>
+                                <li><?php echo CHtml::link(ContentCategory::getData(7, 'title'), array('content/index', 'id' => 7)); ?></li>
                             </ul>
                         </div><!-- col-sm-3 col-xs-6 -->
                         <div class="col-sm-3 col-xs-6 borderLeft clearfix">

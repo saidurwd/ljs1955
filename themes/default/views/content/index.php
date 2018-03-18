@@ -33,11 +33,11 @@ $this->pageTitle = ContentCategory::getCategoryName($_GET['id']);
         <div class="post_right_inner">
             <div class="related_post_sec">
                 <div class="list_block">
-                    <h3>Latest News</h3>
+                    <h3>Latest <?php echo ContentCategory::getData(@$_REQUEST['id'], 'title'); ?></h3>
                     <ul>
-                        <?php Content::get_latest_news(2); ?>
+                        <?php Content::get_latest_news(@$_REQUEST['id']); ?>
                     </ul>
-                    <?php echo CHtml::link('More', array('content/index', 'id' => 2), array('class' => 'more_post')); ?>
+                    <?php echo CHtml::link('More', array('content/index', 'id' => @$_REQUEST['id']), array('class' => 'more_post')); ?>
                 </div>                
             </div><!--end related_post_sec-->
         </div><!--end post right inner-->
