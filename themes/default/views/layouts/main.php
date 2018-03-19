@@ -144,13 +144,17 @@
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
                                                 <ul class="dropdown-menu">
                                                     <li><?php echo CHtml::link(Content::getData(16, 'title'), array('content/view', 'id' => 16)); ?></li>
-                                                    <li><?php echo CHtml::link(Content::getData(17, 'title'), array('content/view', 'id' => 17)); ?></li>
-                                                    <li><?php echo CHtml::link(ContentCategory::getData(7, 'title'), array('content/index', 'id' => 7)); ?></li>       
-                                                    <li><?php echo CHtml::link(Content::getData(18, 'title'), array('content/view', 'id' => 18)); ?></li>                  
+                                                    <li><?php echo CHtml::link(Content::getData(17, 'title'), array('content/view', 'id' => 17)); ?></li>                  
                                                 </ul>
                                             </li>
                                             <li><?php echo CHtml::link(Content::getData(15, 'title'), array('content/view', 'id' => 15)); ?></li>
-                                            <li><?php echo CHtml::link(Content::getData(19, 'title'), array('content/view', 'id' => 19)); ?></li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Academics</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><?php echo CHtml::link('Our Curriculum', array('content/view', 'id' => 19)); ?></li>
+                                                    <li><?php echo CHtml::link(ContentCategory::getData(7, 'title'), array('content/index', 'id' => 7)); ?></li>                        
+                                                </ul>
+                                            </li>                                                                                        
                                             <li class="dropdown">
                                                 <?php echo CHtml::link('Events', array('content/events', 'id' => 4), array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false')); ?>
                                                 <?php BannerCategory::getEventMenue(6); ?>

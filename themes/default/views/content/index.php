@@ -1,10 +1,11 @@
 <?php
 $this->pageTitle = ContentCategory::getCategoryName($_GET['id']);
 ?>
-<div class="row">
-
-    <div class="col-xs-12 col-sm-8 post_left pull-right">
-        <div class="post_left_section post_right_border">
+<div class="row">    
+    <div class="col-xs-12 col-sm-12 post_left pull-right">
+        <div class="post_left_section"> <!-- post_right_border -->
+            <h3><?php echo ContentCategory::getData(@$_REQUEST['id'], 'title'); ?></h3>
+            <hr />
             <?php
             $this->widget('zii.widgets.CListView', array(
                 'dataProvider' => $dataProvider,
@@ -29,17 +30,17 @@ $this->pageTitle = ContentCategory::getCategoryName($_GET['id']);
         </div><!--end post left section-->
     </div><!--end post_left-->
 
-    <div class="col-xs-12 col-sm-4 post_right pull-left">
+<!--    <div class="col-xs-12 col-sm-4 post_right pull-left">
         <div class="post_right_inner">
             <div class="related_post_sec">
                 <div class="list_block">
-                    <h3>Latest <?php echo ContentCategory::getData(@$_REQUEST['id'], 'title'); ?></h3>
+                    <h3>Latest <?php //echo ContentCategory::getData(@$_REQUEST['id'], 'title'); ?></h3>
                     <ul>
-                        <?php Content::get_latest_news(@$_REQUEST['id']); ?>
+                        <?php //Content::get_latest_news(@$_REQUEST['id']); ?>
                     </ul>
-                    <?php echo CHtml::link('More', array('content/index', 'id' => @$_REQUEST['id']), array('class' => 'more_post')); ?>
+                    <?php //echo CHtml::link('More', array('content/index', 'id' => @$_REQUEST['id']), array('class' => 'more_post')); ?>
                 </div>                
-            </div><!--end related_post_sec-->
-        </div><!--end post right inner-->
-    </div><!--end post_right-->
+            </div>end related_post_sec
+        </div>end post right inner
+    </div>end post_right-->
 </div>

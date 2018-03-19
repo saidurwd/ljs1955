@@ -12,3 +12,17 @@ $this->pageTitle = $model->title;
         </div><!--end content left-->
     </div>
 </div><!--end row-->
+
+<!--<div class="post">
+    <div class="post_thumb">
+        <?php //echo Content::get_images($model->id); ?>
+    </div>end post thumb
+    <div class="meta">
+        <span class="author">By: <?php //echo UserAdmin::get_name($model->created_by); ?></span>
+        <span class="date">Posted: <?php //echo Content::get_date_time($model->created); ?></span>
+    </div>end meta
+<h1><?php //echo $model->title; ?></h1>
+    <div class="post_desc">
+        <?php //echo $model->introtext; ?>
+    </div>end post desc
+</div>end post-->
