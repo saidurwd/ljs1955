@@ -173,7 +173,7 @@
                                             <li class="dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Alumni</a>
                                                 <ul class="dropdown-menu">
-                                                    <li><?php echo CHtml::link('Alumni Contribution', array('user/alumni')); ?></li>
+                                                    <li><?php echo CHtml::link('Alumni Association', array('user/alumni')); ?></li>
                                                     <li><?php echo CHtml::link('Registration', array('user/create')); ?></li>               
                                                 </ul>
                                             </li>

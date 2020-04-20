@@ -227,6 +227,12 @@ $this->breadcrumbs = array(
                                                     <span><?php echo $model_profile->office_email; ?></span>
                                                 </div>
                                             </div>
+                                            <div class="profile-info-row">
+                                                <div class="profile-info-name"> Profile Summary </div>
+                                                <div class="profile-info-value">
+                                                    <span><?php echo $model_profile->profile_summary; ?></span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div><!-- /span -->
                                 </div><!-- /row-fluid -->

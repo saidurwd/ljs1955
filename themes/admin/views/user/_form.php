@@ -80,7 +80,23 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
                 <div class="span5">
                     <?php echo $form->fileFieldControlGroup($model_profile, 'profile_picture', array('maxlength' => 255, 'class' => 'span12')); ?>
                 </div>
-            </div>            
+            </div>
+            <div class="control-group">
+                <label for="form-field-1" class="control-label"><?php echo $form->labelEx($model_profile, 'profile_summary'); ?></label>
+                <div class="controls">
+                    <?php
+                    $this->widget('application.extensions.yii-ckeditor.CKEditorWidget', array(
+                        'model' => $model_profile,
+                        'attribute' => 'profile_summary',
+                        // editor options http://docs.ckeditor.com/#!/api/CKEDITOR.config
+                        'config' => array(
+                            'language' => 'en',
+                            //'toolbar' => 'Basic',
+                        ),
+                    ));
+                    ?>
+                </div>
+            </div>
         </div>
     </div>
 </div>

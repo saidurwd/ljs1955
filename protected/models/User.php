@@ -157,7 +157,7 @@ class User extends CActiveRecord {
         if ((is_file($filePath)) && (file_exists($filePath))) {
             return CHtml::image(Yii::app()->baseUrl . '/uploads/profile_picture/' . $value->profile_picture, 'Picture', array('alt' => User::get_user_name($value->user_id), 'class' => 'img-responsive', 'title' => User::get_user_name($value->user_id)));
         } else {
-            return CHtml::image(Yii::app()->baseUrl . '/uploads/profile_picture/profile.jpg', 'Picture', array('alt' => User::get_user_name($value->user_id), 'class' => 'img-responsive', 'title' => User::get_user_name($value->user_id)));
+            return CHtml::image(Yii::app()->baseUrl . '/uploads/profile_picture/profile.jpg', 'Picture', array('alt' => 'Picture', 'class' => 'img-responsive'));
         }
     }
 

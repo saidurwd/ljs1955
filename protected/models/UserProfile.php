@@ -53,10 +53,10 @@ class UserProfile extends CActiveRecord {
             array('office_phone, mobile, phone, fax, batch, nick_name', 'length', 'max' => 100),
             array('address, residence_address, profile_picture', 'length', 'max' => 255),
             array('blood_group', 'length', 'max' => 10),
-            array('expiry, birth_date', 'safe'),
+            array('expiry, birth_date, profile_summary', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, user_id, country_id, job_title, company, company_address, office_phone, office_email, expiry, state_id, city_id, address, residence_address, mobile, phone, fax, website, blood_group, birth_date, batch, nick_name, profile_picture', 'safe', 'on' => 'search'),
+            array('id, user_id, country_id, job_title, company, company_address, office_phone, office_email, expiry, state_id, city_id, address, residence_address, mobile, phone, fax, website, blood_group, birth_date, batch, nick_name, profile_picture, profile_summary', 'safe', 'on' => 'search'),
         );
     }
 
@@ -98,6 +98,7 @@ class UserProfile extends CActiveRecord {
             'batch' => 'Batch',
             'nick_name' => 'Nick Name',
             'profile_picture' => 'Picture',
+            'profile_summary' => 'Profile Summary',
         );
     }
 
@@ -140,6 +141,7 @@ class UserProfile extends CActiveRecord {
         $criteria->compare('batch', $this->batch, true);
         $criteria->compare('nick_name', $this->nick_name, true);
         $criteria->compare('profile_picture', $this->profile_picture, true);
+        $criteria->compare('profile_summary', $this->profile_summary, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -157,6 +159,15 @@ class UserProfile extends CActiveRecord {
      */
     public static function model($className = __CLASS__) {
         return parent::model($className);
+    }
+
+    public static function getDate($user_id, $field) {
+        $value = UserProfile::model()->findByAttributes(array('user_id' => $user_id));
+        if (empty($value->$field)) {
+            return null;
+        } else {
+            return $value->$field;
+        }
     }
 
 }

@@ -51,7 +51,7 @@ class UserController extends Controller {
         $dataProvider = new CActiveDataProvider('User', array(
             'criteria' => $criteria,
             'pagination' => array(
-                'pageSize' => false,
+                'pageSize' => 12,
             ),
         ));
         $criteria->order = 'RAND()';
