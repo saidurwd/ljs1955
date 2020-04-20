@@ -173,7 +173,7 @@
                                             <li class="dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Alumni</a>
                                                 <ul class="dropdown-menu">
-                                                    <li><?php echo CHtml::link('Contribution', array('content/view', 'id' => 24)); ?></li>
+                                                    <li><?php echo CHtml::link('Alumni Contribution', array('user/alumni')); ?></li>
                                                     <li><?php echo CHtml::link('Registration', array('user/create')); ?></li>               
                                                 </ul>
                                             </li>
@@ -197,7 +197,7 @@
                             <ul class="menuLink clearfix">
                                 <li><?php echo CHtml::link(Content::getData(15, 'title'), array('content/view', 'id' => 15)); ?></li>
                                 <li><?php echo CHtml::link(Content::getData(19, 'title'), array('content/view', 'id' => 19)); ?></li>                                       
-                                <li><?php echo CHtml::link('News', array('content/news')); ?></li>
+                                <?php /* <li><?php echo CHtml::link('News', array('content/news')); ?></li> */ ?>
                                 <li><?php echo CHtml::link(ContentCategory::getData(7, 'title'), array('content/index', 'id' => 7)); ?></li>
                             </ul>
                         </div><!-- col-sm-3 col-xs-6 -->
@@ -222,6 +222,7 @@
                             </div>
                         </div><!-- col-sm-3 col-xs-6 -->
                         <div class="col-sm-3 col-xs-6 borderLeft clearfix">
+                            <?php /*
                             <div class="socialArea clearfix">
                                 <h5>Find us on:</h5>
                                 <ul class="list-inline ">
@@ -233,6 +234,7 @@
                                     <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
                                 </ul>
                             </div><!-- social -->
+                            */?>
                             <div class="contactNo clearfix">
                                 <h5>Call us on:</h5>
                                 <p>+8802 9552854<br />+8802 9562502</p>

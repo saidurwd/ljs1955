@@ -151,4 +151,14 @@ class User extends CActiveRecord {
         }
     }
 
+    public static function get_picture_alumni($id) {
+        $value = UserProfile::model()->findByAttributes(array('user_id' => $id));
+        $filePath = Yii::app()->basePath . '/../uploads/profile_picture/' . @$value->profile_picture;
+        if ((is_file($filePath)) && (file_exists($filePath))) {
+            return CHtml::image(Yii::app()->baseUrl . '/uploads/profile_picture/' . $value->profile_picture, 'Picture', array('alt' => User::get_user_name($value->user_id), 'class' => 'img-responsive', 'title' => User::get_user_name($value->user_id)));
+        } else {
+            return CHtml::image(Yii::app()->baseUrl . '/uploads/profile_picture/profile.jpg', 'Picture', array('alt' => User::get_user_name($value->user_id), 'class' => 'img-responsive', 'title' => User::get_user_name($value->user_id)));
+        }
+    }
+
 }

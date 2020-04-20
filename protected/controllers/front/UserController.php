@@ -26,7 +26,7 @@ class UserController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view', 'create'),
+                'actions' => array('index', 'view', 'create','alumni'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -41,6 +41,24 @@ class UserController extends Controller {
                 'users' => array('*'),
             ),
         );
+    }
+
+    public function actionAlumni() {
+        $criteria = new CDbCriteria;
+        $criteria->addCondition('group_id=8');
+        $criteria->addCondition('status=1');
+
+        $dataProvider = new CActiveDataProvider('User', array(
+            'criteria' => $criteria,
+            'pagination' => array(
+                'pageSize' => false,
+            ),
+        ));
+        $criteria->order = 'RAND()';
+        $this->render('alumni', array(
+            'dataProvider' => $dataProvider,
+            'model' => $this::loadModelContent(24),
+        ));
     }
 
     /**
@@ -163,6 +181,13 @@ class UserController extends Controller {
 
     public function loadModelProfile($id) {
         $model = UserProfile::model()->findByAttributes(array('user_id' => $id));
+        if ($model === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+        return $model;
+    }
+
+    public function loadModelContent($id) {
+        $model = Content::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
