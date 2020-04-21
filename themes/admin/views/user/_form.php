@@ -32,6 +32,12 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
             <?php echo $form->textFieldControlGroup($model_profile, 'phone', array('class' => 'span5', 'maxlength' => 100)); ?>
             <?php echo $form->textFieldControlGroup($model_profile, 'fax', array('class' => 'span5', 'maxlength' => 100)); ?>
             <?php echo $form->textFieldControlGroup($model_profile, 'website', array('class' => 'span5', 'maxlength' => 150)); ?>
+            <?php echo $form->textFieldControlGroup($model_profile, 'batch', array('class' => 'span5', 'maxlength' => 150)); ?>
+            <?php echo $form->textFieldControlGroup($model_profile, 'job_title', array('class' => 'span5', 'maxlength' => 150)); ?>
+            <?php echo $form->textFieldControlGroup($model_profile, 'company', array('class' => 'span5', 'maxlength' => 150)); ?>
+            <?php echo $form->textFieldControlGroup($model_profile, 'company_address', array('class' => 'span5', 'maxlength' => 250)); ?>
+            <?php echo $form->textFieldControlGroup($model_profile, 'company_address', array('class' => 'span5', 'maxlength' => 250)); ?>
+            <?php echo $form->textFieldControlGroup($model_profile, 'office_phone', array('class' => 'span5', 'maxlength' => 250)); ?>
             <?php echo $form->labelEx($model_profile, 'expiry'); ?>
             <?php
             echo $form->widget('zii.widgets.jui.CJuiDatePicker', array(

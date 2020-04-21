@@ -105,23 +105,23 @@
     </div><!-- container -->
 </div>
 <!-- end mainContent -->
-<?php /*
 <!--testimonial-->
 <div class="testimonial-section clearfix"> 
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-6">
+            <div class="col-xs-12 col-sm-12">
                 <div class="testimonial">
                     <?php Content::get_recent_testimonial(5); ?> 
                 </div><!-- testimonial -->
             </div><!-- col-xs-12 -->
+            <?php /*
             <div class="col-xs-12 col-sm-6">
                 <div class="features">
                     <h3><?php echo Content::getData(12, 'title'); ?></h3>
                     <?php echo Content::getData(12, 'introtext'); ?> <!-- <i class="fa fa-check-circle-o"></i>-->
                 </div>
             </div><!-- col-xs-12 -->
+            */ ?>
         </div><!-- row -->
     </div><!-- container -->
 </div><!-- testimonial-section -->
- */ ?>

@@ -36,10 +36,8 @@ $this->pageTitle = $model->name;
                             <ul>
                                 <li><span>Name:</span><?=$model->name?></li>
                                 <li><span>Batch:</span><?=$modelProfile->batch?></li>
-                                <li><span>Email:</span><?=$model->email?></li>
                                 <li><span>Job Title:</span><?=$modelProfile->job_title?></li>
                                 <li><span>Company:</span><?=$modelProfile->company?></li>
-                                <li><span>Office Email:</span><?=$modelProfile->office_email?></li>
                             </ul>
                         </div>
                     </div><!--end sidebar item-->
