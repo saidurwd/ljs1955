@@ -7,11 +7,11 @@ $this->pageTitle = 'Contact Us';
             <h3>Contact Form</h3>
             <p>If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.</p>
             <div class="contact_form">
-                <?php if (Yii::app()->user->hasFlash('contact')): ?>
+                <?php if (Yii::app()->user->hasFlash('contact')) : ?>
                     <div class="flash-success">
                         <?php echo Yii::app()->user->getFlash('contact'); ?>
                     </div>
-                <?php else: ?>
+                <?php else : ?>
                     <?php $form = $this->beginWidget('CActiveForm'); ?>
                     <?php echo $form->errorSummary($model); ?>
                     <div class="row">
@@ -21,7 +21,8 @@ $this->pageTitle = 'Contact Us';
                                 <?php echo $form->textField($model, 'name', array('class' => 'form-control')); ?>
                             </div>
                         </div>
-                    </div><!--end row-->
+                    </div>
+                    <!--end row-->
                     <div class="row">
                         <div class="col-xs-12 col-sm-7">
                             <div class="form-group">
@@ -29,7 +30,8 @@ $this->pageTitle = 'Contact Us';
                                 <?php echo $form->textField($model, 'email', array('class' => 'form-control')); ?>
                             </div>
                         </div>
-                    </div><!--end row-->
+                    </div>
+                    <!--end row-->
                     <div class="row">
                         <div class="col-xs-12 col-sm-7">
                             <div class="form-group">
@@ -37,7 +39,8 @@ $this->pageTitle = 'Contact Us';
                                 <?php echo $form->textField($model, 'subject', array('class' => 'form-control')); ?>
                             </div>
                         </div>
-                    </div><!--end row-->
+                    </div>
+                    <!--end row-->
                     <div class="row">
                         <div class="col-xs-12 col-sm-11">
                             <div class="form-group">
@@ -45,8 +48,9 @@ $this->pageTitle = 'Contact Us';
                                 <?php echo $form->textArea($model, 'body', array('class' => 'form-control', 'rows' => 9, 'cols' => 10)); ?>
                             </div>
                         </div>
-                    </div><!--end row-->
-                    <?php if (CCaptcha::checkRequirements()): ?>
+                    </div>
+                    <!--end row-->
+                    <?php if (CCaptcha::checkRequirements()) : ?>
                         <div class="row">
                             <?php echo $form->labelEx($model, 'verifyCode'); ?>
                             <div>
@@ -61,8 +65,9 @@ $this->pageTitle = 'Contact Us';
                     </div>
                     <?php $this->endWidget(); ?>
                 <?php endif; ?>
-            </div>  
-        </div><!--end single content left-->
+            </div>
+        </div>
+        <!--end single content left-->
     </div>
 
     <div class="col-xs-12 col-sm-4 custom_left">
@@ -72,7 +77,7 @@ $this->pageTitle = 'Contact Us';
                 <ul class="contact_info">
                     <li><i class="fa fa-home"></i> Little Jewels Nursery Infant And Junior School, Purana Poltan, Dhaka-1000 </li>
                     <li><i class="fa fa-envelope"></i> <a href="mailto:ljs1955@dhaka.net">ljs1955@dhaka.net</a></li>
-                    <li><i class="fa fa-phone"></i> +880 2 9552854, +880 2 9562502</li>
+                    <li><i class="fa fa-phone"></i> +8802 55112143, +8802 55112145</li>
                     <li><i class="fa fa-globe"></i> <a href="#">http://www.ljs1955.com</a></li>
                 </ul>
             </div>
@@ -83,7 +88,8 @@ $this->pageTitle = 'Contact Us';
                     <li><strong>Saturday:</strong> 8am to 12pm</li>
                     <li><strong>Friday:</strong> Closed</li>
                 </ul>
-            </div><!--end sidebar item-->
+            </div>
+            <!--end sidebar item-->
             <div class="list_block">
                 <div class="newsletter">
                     <h3>Newsletter</h3>
@@ -95,6 +101,8 @@ $this->pageTitle = 'Contact Us';
                     </form>
                 </div>
             </div>
-        </div><!--end sidebar-->
+        </div>
+        <!--end sidebar-->
     </div>
-</div><!--end row-->
+</div>
+<!--end row-->
