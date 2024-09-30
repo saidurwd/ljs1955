@@ -69,7 +69,16 @@
                             <br />
                             <?php echo CHtml::link('More Announcement', array('content/notices'), array('class' => 'btn btn-default btn-block btn-green')); ?>
                         </div>
-                    </div><!-- end list_block --> 
+                    </div><!-- end list_block -->
+                    <div class="list_block related_post_sec">
+                        <div class="upcoming_events">
+                            <h3>Biography</h3>
+                            <p>
+                                <iframe width="700" height="315" src="https://www.youtube.com/embed/YaZS1RH--dY?si=gmjsCYZkVsnr8OxX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </p>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div><!-- end list_block -->
                 </div><!--videoNine-->
             </div><!-- col-sm-8 col-xs-12 -->
             <div class="col-sm-4 col-xs-12">
