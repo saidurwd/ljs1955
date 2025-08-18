@@ -75,9 +75,9 @@ $this->pageTitle = 'Contact Us';
             <div class="list_block sidebar_item">
                 <h3>Contacts</h3>
                 <ul class="contact_info">
-                    <li><i class="fa fa-home"></i> Little Jewels Nursery Infant And Junior School, Purana Poltan, Dhaka-1000 </li>
+                    <li><i class="fa fa-home"></i> Little Jewels Nursery Infant And Junior School, Purana Paltan, Dhaka-1000 </li>
                     <li><i class="fa fa-envelope"></i> <a href="mailto:ljs1955@dhaka.net">ljs1955@dhaka.net</a></li>
-                    <li><i class="fa fa-phone"></i> +8802 55112143, +8802 55112145</li>
+                    <li><i class="fa fa-phone"></i> +8801302428626</li>
                     <li><i class="fa fa-globe"></i> <a href="#">http://www.ljs1955.com</a></li>
                 </ul>
             </div>
@@ -85,7 +85,7 @@ $this->pageTitle = 'Contact Us';
                 <h3>Business Hours</h3>
                 <ul class="contact_info">
                     <li><strong>Sunday-Thursday:</strong> 8am to 2pm</li>
-                    <li><strong>Saturday:</strong> 8am to 12pm</li>
+                    <!-- <li><strong>Saturday:</strong> 8am to 12pm</li> -->
                     <li><strong>Friday:</strong> Closed</li>
                 </ul>
             </div>
